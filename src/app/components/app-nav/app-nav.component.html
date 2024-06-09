@@ -1,0 +1,49 @@
+<div class="app-nav">
+  <h1 style="white-space: nowrap; font-size: 2rem">Angular Demo</h1>
+
+  <nav>
+    <div class="mb0-25">
+      <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"> Home </a>
+    </div>
+
+    <!-- <div class="mb0-25">
+      <a routerLink="/ui-template" routerLinkActive="active" ariaCurrentWhenActive="page">
+        UI Template
+      </a>
+    </div> -->
+
+    <div class="mb0-25">
+      <mat-accordion multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a routerLink="/ui-template" routerLinkActive="active" ariaCurrentWhenActive="page">
+                UI Template
+              </a>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="row">
+            <a
+              routerLink="/ui-template/material-theme"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+            >
+              Material Theme
+            </a>
+          </div>
+
+          <div class="row">
+            <a
+              routerLink="/ui-template/buttons"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+            >
+              Buttons
+            </a>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </nav>
+</div>

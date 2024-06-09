@@ -1,0 +1,29 @@
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // overide this to add or remove lines
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: end;
+  overflow: hidden;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.pre {
+  white-space: pre;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline;
+}

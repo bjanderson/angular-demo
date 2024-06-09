@@ -1,0 +1,402 @@
+@use '@angular/material' as mat;
+@import '../material.scss';
+@import '_page.scss';
+
+:host {
+  @extend .page;
+
+  .color {
+    padding: 0.5rem;
+    width: 10rem;
+  }
+
+  .primary-0 {
+    background-color: mat.get-theme-color($theme, primary, 0);
+    color: white;
+  }
+  .primary-10 {
+    background-color: mat.get-theme-color($theme, primary, 10);
+    color: white;
+  }
+  .primary-20 {
+    background-color: mat.get-theme-color($theme, primary, 20);
+    color: white;
+  }
+  .primary-25 {
+    background-color: mat.get-theme-color($theme, primary, 25);
+    color: white;
+  }
+  .primary-30 {
+    background-color: mat.get-theme-color($theme, primary, 30);
+    color: white;
+  }
+  .primary-35 {
+    background-color: mat.get-theme-color($theme, primary, 35);
+    color: white;
+  }
+  .primary-40 {
+    background-color: mat.get-theme-color($theme, primary, 40);
+    color: white;
+  }
+  .primary-50 {
+    background-color: mat.get-theme-color($theme, primary, 50);
+    color: white;
+  }
+  .primary-60 {
+    background-color: mat.get-theme-color($theme, primary, 60);
+    color: black;
+  }
+  .primary-70 {
+    background-color: mat.get-theme-color($theme, primary, 70);
+    color: black;
+  }
+  .primary-80 {
+    background-color: mat.get-theme-color($theme, primary, 80);
+    color: black;
+  }
+  .primary-90 {
+    background-color: mat.get-theme-color($theme, primary, 90);
+    color: black;
+  }
+  .primary-95 {
+    background-color: mat.get-theme-color($theme, primary, 95);
+    color: black;
+  }
+  .primary-98 {
+    background-color: mat.get-theme-color($theme, primary, 98);
+    color: black;
+  }
+  .primary-99 {
+    background-color: mat.get-theme-color($theme, primary, 99);
+    color: black;
+  }
+  .primary-100 {
+    background-color: mat.get-theme-color($theme, primary, 100);
+    color: black;
+  }
+
+  .secondary-0 {
+    background-color: mat.get-theme-color($theme, secondary, 0);
+    color: white;
+  }
+  .secondary-10 {
+    background-color: mat.get-theme-color($theme, secondary, 10);
+    color: white;
+  }
+  .secondary-20 {
+    background-color: mat.get-theme-color($theme, secondary, 20);
+    color: white;
+  }
+  .secondary-25 {
+    background-color: mat.get-theme-color($theme, secondary, 25);
+    color: white;
+  }
+  .secondary-30 {
+    background-color: mat.get-theme-color($theme, secondary, 30);
+    color: white;
+  }
+  .secondary-35 {
+    background-color: mat.get-theme-color($theme, secondary, 35);
+    color: white;
+  }
+  .secondary-40 {
+    background-color: mat.get-theme-color($theme, secondary, 40);
+    color: white;
+  }
+  .secondary-50 {
+    background-color: mat.get-theme-color($theme, secondary, 50);
+    color: white;
+  }
+  .secondary-60 {
+    background-color: mat.get-theme-color($theme, secondary, 60);
+    color: black;
+  }
+  .secondary-70 {
+    background-color: mat.get-theme-color($theme, secondary, 70);
+    color: black;
+  }
+  .secondary-80 {
+    background-color: mat.get-theme-color($theme, secondary, 80);
+    color: black;
+  }
+  .secondary-90 {
+    background-color: mat.get-theme-color($theme, secondary, 90);
+    color: black;
+  }
+  .secondary-95 {
+    background-color: mat.get-theme-color($theme, secondary, 95);
+    color: black;
+  }
+  .secondary-98 {
+    background-color: mat.get-theme-color($theme, secondary, 98);
+    color: black;
+  }
+  .secondary-99 {
+    background-color: mat.get-theme-color($theme, secondary, 99);
+    color: black;
+  }
+  .secondary-100 {
+    background-color: mat.get-theme-color($theme, secondary, 100);
+    color: black;
+  }
+
+  .tertiary-0 {
+    background-color: mat.get-theme-color($theme, tertiary, 0);
+    color: white;
+  }
+  .tertiary-10 {
+    background-color: mat.get-theme-color($theme, tertiary, 10);
+    color: white;
+  }
+  .tertiary-20 {
+    background-color: mat.get-theme-color($theme, tertiary, 20);
+    color: white;
+  }
+  .tertiary-25 {
+    background-color: mat.get-theme-color($theme, tertiary, 25);
+    color: white;
+  }
+  .tertiary-30 {
+    background-color: mat.get-theme-color($theme, tertiary, 30);
+    color: white;
+  }
+  .tertiary-35 {
+    background-color: mat.get-theme-color($theme, tertiary, 35);
+    color: white;
+  }
+  .tertiary-40 {
+    background-color: mat.get-theme-color($theme, tertiary, 40);
+    color: white;
+  }
+  .tertiary-50 {
+    background-color: mat.get-theme-color($theme, tertiary, 50);
+    color: white;
+  }
+  .tertiary-60 {
+    background-color: mat.get-theme-color($theme, tertiary, 60);
+    color: black;
+  }
+  .tertiary-70 {
+    background-color: mat.get-theme-color($theme, tertiary, 70);
+    color: black;
+  }
+  .tertiary-80 {
+    background-color: mat.get-theme-color($theme, tertiary, 80);
+    color: black;
+  }
+  .tertiary-90 {
+    background-color: mat.get-theme-color($theme, tertiary, 90);
+    color: black;
+  }
+  .tertiary-95 {
+    background-color: mat.get-theme-color($theme, tertiary, 95);
+    color: black;
+  }
+  .tertiary-98 {
+    background-color: mat.get-theme-color($theme, tertiary, 98);
+    color: black;
+  }
+  .tertiary-99 {
+    background-color: mat.get-theme-color($theme, tertiary, 99);
+    color: black;
+  }
+  .tertiary-100 {
+    background-color: mat.get-theme-color($theme, tertiary, 100);
+    color: black;
+  }
+
+  .error-0 {
+    background-color: mat.get-theme-color($theme, error, 0);
+    color: white;
+  }
+  .error-10 {
+    background-color: mat.get-theme-color($theme, error, 10);
+    color: white;
+  }
+  .error-20 {
+    background-color: mat.get-theme-color($theme, error, 20);
+    color: white;
+  }
+  .error-25 {
+    background-color: mat.get-theme-color($theme, error, 25);
+    color: white;
+  }
+  .error-30 {
+    background-color: mat.get-theme-color($theme, error, 30);
+    color: white;
+  }
+  .error-35 {
+    background-color: mat.get-theme-color($theme, error, 35);
+    color: white;
+  }
+  .error-40 {
+    background-color: mat.get-theme-color($theme, error, 40);
+    color: white;
+  }
+  .error-50 {
+    background-color: mat.get-theme-color($theme, error, 50);
+    color: white;
+  }
+  .error-60 {
+    background-color: mat.get-theme-color($theme, error, 60);
+    color: black;
+  }
+  .error-70 {
+    background-color: mat.get-theme-color($theme, error, 70);
+    color: black;
+  }
+  .error-80 {
+    background-color: mat.get-theme-color($theme, error, 80);
+    color: black;
+  }
+  .error-90 {
+    background-color: mat.get-theme-color($theme, error, 90);
+    color: black;
+  }
+  .error-95 {
+    background-color: mat.get-theme-color($theme, error, 95);
+    color: black;
+  }
+  .error-98 {
+    background-color: mat.get-theme-color($theme, error, 98);
+    color: black;
+  }
+  .error-99 {
+    background-color: mat.get-theme-color($theme, error, 99);
+    color: black;
+  }
+  .error-100 {
+    background-color: mat.get-theme-color($theme, error, 100);
+    color: black;
+  }
+
+  .neutral-0 {
+    background-color: mat.get-theme-color($theme, neutral, 0);
+    color: white;
+  }
+  .neutral-10 {
+    background-color: mat.get-theme-color($theme, neutral, 10);
+    color: white;
+  }
+  .neutral-20 {
+    background-color: mat.get-theme-color($theme, neutral, 20);
+    color: white;
+  }
+  .neutral-25 {
+    background-color: mat.get-theme-color($theme, neutral, 25);
+    color: white;
+  }
+  .neutral-30 {
+    background-color: mat.get-theme-color($theme, neutral, 30);
+    color: white;
+  }
+  .neutral-35 {
+    background-color: mat.get-theme-color($theme, neutral, 35);
+    color: white;
+  }
+  .neutral-40 {
+    background-color: mat.get-theme-color($theme, neutral, 40);
+    color: white;
+  }
+  .neutral-50 {
+    background-color: mat.get-theme-color($theme, neutral, 50);
+    color: white;
+  }
+  .neutral-60 {
+    background-color: mat.get-theme-color($theme, neutral, 60);
+    color: black;
+  }
+  .neutral-70 {
+    background-color: mat.get-theme-color($theme, neutral, 70);
+    color: black;
+  }
+  .neutral-80 {
+    background-color: mat.get-theme-color($theme, neutral, 80);
+    color: black;
+  }
+  .neutral-90 {
+    background-color: mat.get-theme-color($theme, neutral, 90);
+    color: black;
+  }
+  .neutral-95 {
+    background-color: mat.get-theme-color($theme, neutral, 95);
+    color: black;
+  }
+  .neutral-98 {
+    background-color: mat.get-theme-color($theme, neutral, 98);
+    color: black;
+  }
+  .neutral-99 {
+    background-color: mat.get-theme-color($theme, neutral, 99);
+    color: black;
+  }
+  .neutral-100 {
+    background-color: mat.get-theme-color($theme, neutral, 100);
+    color: black;
+  }
+
+  .neutral-variant-0 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 0);
+    color: white;
+  }
+  .neutral-variant-10 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 10);
+    color: white;
+  }
+  .neutral-variant-20 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 20);
+    color: white;
+  }
+  .neutral-variant-25 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 25);
+    color: white;
+  }
+  .neutral-variant-30 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 30);
+    color: white;
+  }
+  .neutral-variant-35 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 35);
+    color: white;
+  }
+  .neutral-variant-40 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 40);
+    color: white;
+  }
+  .neutral-variant-50 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 50);
+    color: white;
+  }
+  .neutral-variant-60 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 60);
+    color: black;
+  }
+  .neutral-variant-70 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 70);
+    color: black;
+  }
+  .neutral-variant-80 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 80);
+    color: black;
+  }
+  .neutral-variant-90 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 90);
+    color: black;
+  }
+  .neutral-variant-95 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 95);
+    color: black;
+  }
+  .neutral-variant-98 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 98);
+    color: black;
+  }
+  .neutral-variant-99 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 99);
+    color: black;
+  }
+  .neutral-variant-100 {
+    background-color: mat.get-theme-color($theme, neutral-variant, 100);
+    color: black;
+  }
+}

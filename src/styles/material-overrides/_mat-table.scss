@@ -1,0 +1,13 @@
+@import '_colors.scss';
+
+.mat-mdc-sort-header-content {
+  text-transform: capitalize;
+}
+
+.mat-mdc-paginator-container {
+  .mat-mdc-icon-button,
+  .mat-mdc-select-value,
+  .mat-mdc-select-arrow {
+    color: $outer-space;
+  }
+}

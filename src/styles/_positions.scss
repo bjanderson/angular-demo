@@ -1,0 +1,80 @@
+.hidden {
+  visibility: hidden !important;
+}
+
+.removed {
+  display: none !important;
+}
+
+$widths: (
+  '25': '25%',
+  '50': '50%',
+  '75': '75%',
+  '100': '100%',
+);
+@each $w, $width in $widths {
+  .w#{$w} {
+    width: #{$width} !important;
+  }
+
+  .maxw#{$w} {
+    max-width: #{$width} !important;
+  }
+
+  .minw#{$w} {
+    min-width: #{$width} !important;
+  }
+}
+
+$sizes: (
+  '0': '0rem',
+  '0-25': '0.25rem',
+  '0-5': '0.5rem',
+  '0-75': '0.75rem',
+  '1': '1rem',
+  '1-25': '1.25rem',
+  '1-5': '1.5rem',
+  '1-75': '1.75rem',
+  '2': '2rem',
+  '3': '3rem',
+  '4': '4rem',
+  '5': '5rem',
+);
+
+$dimensions: (
+  'm': 'margin',
+  'p': 'padding',
+);
+
+$directions: (
+  't': 'top',
+  'r': 'right',
+  'b': 'bottom',
+  'l': 'left',
+);
+
+@each $s, $size in $sizes {
+  @each $dim, $dimension in $dimensions {
+    .#{$dim}#{$s} {
+      #{$dimension}: #{$size} !important;
+    }
+
+    @each $dir, $direction in $directions {
+      .#{$dim}#{$dir}#{$s} {
+        #{$dimension}-#{$direction}: #{$size} !important;
+      }
+    }
+
+    .#{$dim}tb#{$s},
+    .#{$dim}bt#{$s} {
+      #{$dimension}-top: #{$size} !important;
+      #{$dimension}-bottom: #{$size} !important;
+    }
+
+    .#{$dim}lr#{$s},
+    .#{$dim}rl#{$s} {
+      #{$dimension}-left: #{$size} !important;
+      #{$dimension}-right: #{$size} !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+:root {
+  --mdc-fab-container-shape: 0.5rem;
+  --mdc-fab-small-container-shape: 0.5rem;
+  --mdc-filled-button-container-shape: 0.5rem;
+  --mdc-outlined-button-container-shape: 0.5rem;
+  --mdc-protected-button-container-shape: 0.5rem;
+  --mdc-text-button-container-shape: 0.5rem;
+}
+
+button[mat-icon-button].mat-mdc-icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: fit-content;
+  // height: fit-content;
+  width: 2.5rem;
+  height: 2.5rem;
+}

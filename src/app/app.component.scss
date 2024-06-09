@@ -1,0 +1,17 @@
+@import '_colors.scss';
+
+:host {
+  .mat-sidenav-container {
+    min-height: 100vh;
+    padding: 0;
+
+    .mat-sidenav {
+      padding: 0.25rem 1rem;
+    }
+
+    .mat-sidenav-content {
+      min-height: 100vh;
+      background-color: $white;
+    }
+  }
+}

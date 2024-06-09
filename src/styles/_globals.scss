@@ -1,0 +1,24 @@
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.centered-image {
+  @extend .center;
+
+  img {
+    width: 90%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
