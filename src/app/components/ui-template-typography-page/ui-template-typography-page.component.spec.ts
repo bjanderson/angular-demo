@@ -1,11 +1,11 @@
-import { UiTemplateMaterialThemePageComponent } from './ui-template-material-theme-page.component';
+import { UiTemplateTypographyPageComponent } from './ui-template-typography-page.component';
 
 let component: any;
 function init(): void {
-  component = new UiTemplateMaterialThemePageComponent();
+  component = new UiTemplateTypographyPageComponent();
 }
 
-describe('UiTemplateMaterialThemePageComponent', () => {
+describe('UiTemplateTypographyPageComponent', () => {
   describe('constructor', () => {
     beforeEach(() => {
       init();

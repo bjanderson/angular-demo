@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+@import '../material.scss';
+@import '_page.scss';
+@import '_typography.scss';
+
+:host {
+  @extend .page;
+
+  .typography {
+    @extend .ellipsis;
+    max-width: 90rem;
+  }
+}

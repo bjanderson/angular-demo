@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ui-ui-template-material-theme-page',
+  selector: 'ui-ui-template-typography-page',
   standalone: true,
-  styleUrl: './ui-template-material-theme-page.component.scss',
-  templateUrl: './ui-template-material-theme-page.component.html',
+  styleUrl: './ui-template-typography-page.component.scss',
+  templateUrl: './ui-template-typography-page.component.html',
   imports: [],
 })
-export class UiTemplateMaterialThemePageComponent {
+export class UiTemplateTypographyPageComponent {
   loremIpsum = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
     printer took a galley of type and scrambled it to make a type specimen book. It has survived not

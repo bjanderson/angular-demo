@@ -1,17 +1,79 @@
-$black: #000000;
-$black-two: #2d2d2d;
-$black-three: #303030;
+// $black: #000000;
+// $black-two: #2d2d2d;
+// $black-three: #303030;
 
-$white: #ffffff;
-$white-two: #efefef;
-$white-three: #e0e0e0;
+// $white: #ffffff;
+// $white-two: #efefef;
+// $white-three: #e0e0e0;
 
-$blaze-orange: #ff6600;
-$bright-navy-blue: #2d7dd2;
-$sheen-green: #97cc04;
-$selective-yellow: #eeb902;
-$outer-space: #474647;
+// $blaze-orange: #ff6600;
+// $bright-navy-blue: #2d7dd2;
+// $sheen-green: #97cc04;
+// $selective-yellow: #eeb902;
+// $outer-space: #474647;
 
-$main-bg-color: $white-two;
+// $main-bg-color: $white-two;
 
-$label-color: rgba(255, 255, 255, 0.4);
+// $label-color: rgba(255, 255, 255, 0.4);
+
+/* shades of gray */
+$color-000000: #000000;
+$color-00000040: #00000040;
+$color-00000033: #00000033;
+$color-333333: #333333;
+$color-ffffff: #ffffff;
+
+/* primary */
+$color-004382: #004382;
+$color-0160ce: #0160ce;
+$color-0a2240: #0a2240;
+
+/* secondary */
+$color-60606e: #60606e;
+$color-e4e5ee: #e4e5ee;
+$color-f6f8fb: #f6f8fb;
+
+/* success */
+$color-217232: #217232;
+$color-9dbda4: #9dbda4;
+$color-c5d6c8: #c5d6c8;
+
+/* error */
+$color-b10a24: #b10a24;
+$color-d7949f: #d7949f;
+$color-e3c0c5: #e3c0c5;
+
+/* warning */
+$color-ba4d07: #ba4d07;
+$color-daae92: #daae92;
+$color-e4cec0: #e4cec0;
+
+/* info */
+$color-015a89: #015a89;
+$color-90b4c7: #90b4c7;
+$color-bed0da: #bed0da;
+
+/* table/input shading */
+$color-f2f9ff: #f2f9ff;
+$color-f9f9f9: #f9f9f9;
+
+/* special search bg color */
+$color-f6f8fb: #f6f8fb;
+
+/* highlighting */
+$color-ffff00: #ffff00;
+
+/* classifications */
+$color-3333ff: #3333ff;
+
+/* aliases */
+$link-color: $color-0160ce;
+$link-disabled-color: $color-90b4c7;
+
+.color-primary {
+  color: $color-004382;
+}
+
+.color-accent {
+  color: $color-0160ce;
+}

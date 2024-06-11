@@ -10,21 +10,40 @@ export const routes: Routes = [
 
   {
     path: 'ui-template',
-    loadComponent: () =>
-      import('./components/ui-template-page').then((c) => c.UiTemplatePageComponent),
-  },
+    // loadComponent: () =>
+    //   import('./components/ui-template-page').then((c) => c.UiTemplatePageComponent),
+    children: [
+      {
+        path: 'colors',
+        loadComponent: () =>
+          import('./components/ui-template-colors-page').then(
+            (c) => c.UiTemplateColorsPageComponent,
+          ),
+      },
 
-  {
-    path: 'ui-template/buttons',
-    loadComponent: () =>
-      import('./components/ui-template-buttons-page').then((c) => c.UiTemplateButtonsPageComponent),
-  },
+      {
+        path: 'typography',
+        loadComponent: () =>
+          import('./components/ui-template-typography-page').then(
+            (c) => c.UiTemplateTypographyPageComponent,
+          ),
+      },
 
-  {
-    path: 'ui-template/material-theme',
-    loadComponent: () =>
-      import('./components/ui-template-material-theme-page').then(
-        (c) => c.UiTemplateMaterialThemePageComponent,
-      ),
+      {
+        path: 'autocomplete',
+        loadComponent: () =>
+          import('./components/ui-template-autocomplete-page').then(
+            (c) => c.UiTemplateAutocompletePageComponent,
+          ),
+      },
+
+      {
+        path: 'buttons',
+        loadComponent: () =>
+          import('./components/ui-template-buttons-page').then(
+            (c) => c.UiTemplateButtonsPageComponent,
+          ),
+      },
+    ],
   },
 ];
