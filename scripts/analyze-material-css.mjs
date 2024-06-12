@@ -74,37 +74,31 @@ const primaryScss = materialScss.split('$primary')[1].split('$secondary')[0];
 const foundInPrimary = getFoundCounts(primaryScss);
 const primaryPalette = getColors(foundInPrimary);
 palettes.push(primaryPalette);
-console.log('primaryPalette :>> ', primaryPalette);
 
 const secondaryScss = materialScss.split('$secondary')[1].split('$tertiary')[0];
 const foundInSecondary = getFoundCounts(secondaryScss);
 const secondaryPalette = getColors(foundInSecondary);
 palettes.push(secondaryPalette);
-console.log('secondaryPalette :>> ', secondaryPalette);
 
 const tertiaryScss = materialScss.split('$tertiary')[1].split('$neutral')[0];
 const foundInTertiary = getFoundCounts(tertiaryScss);
 const tertiaryPalette = getColors(foundInTertiary);
 palettes.push(tertiaryPalette);
-console.log('tertiaryPalette :>> ', tertiaryPalette);
 
 const neutralScss = materialScss.split('$neutral')[1].split('$neutral-variant')[0];
 const foundInNeutral = getFoundCounts(neutralScss);
 const neutralPalette = getColors(foundInNeutral);
 palettes.push(neutralPalette);
-console.log('neutralPalette :>> ', neutralPalette);
 
 const neutralvariantScss = materialScss.split('$neutral-variant')[1].split('$error')[0];
 const foundInNeutralVariant = getFoundCounts(neutralvariantScss);
 const neutralvariantPalette = getColors(foundInNeutralVariant);
 palettes.push(neutralvariantPalette);
-console.log('neutralvariantPalette :>> ', neutralvariantPalette);
 
 const errorScss = materialScss.split('$error')[1].split('$_palettes')[0];
 const foundInError = getFoundCounts(errorScss);
 const errorPalette = getColors(foundInError);
 palettes.push(errorPalette);
-console.log('errorPalette :>> ', errorPalette);
 
 const indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
 const paletteNames = [
@@ -117,7 +111,7 @@ const paletteNames = [
 ];
 const generateScss = () => {
   const styles = paletteNames.map((p, i) => {
-    let x = palettes[i].map((c, i) => `${indices[i]}: ${c}`);
+    const x = palettes[i].map((c, i) => `${indices[i]}: ${c}`);
     return `${p}: (\n${x.join(',\n')}\n)`;
   });
 
@@ -126,4 +120,4 @@ const generateScss = () => {
 };
 
 const scss = generateScss();
-console.log('scss :>> ', scss);
+console.log(scss);
