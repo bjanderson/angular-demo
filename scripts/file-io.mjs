@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { resolve } from 'path';
 
 export const createDirectory = (path) => {
   try {
@@ -9,6 +10,10 @@ export const createDirectory = (path) => {
     console.error(err);
     process.exit(1);
   }
+};
+
+export const getPath = (args) => {
+  return resolve(...args);
 };
 
 export const pathExists = (path) => {
