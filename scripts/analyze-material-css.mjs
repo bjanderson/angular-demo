@@ -1,8 +1,17 @@
-import { getPath, readFile } from './file-io.mjs';
+import { getPath, readFile, writeFile } from './file-io.mjs';
+
+/**
+ * README
+ * 1. Set the theme you want to analyze in src/material.scss.
+ * 2. Run 'npm run sass:material' to generate the css output of that theme.
+ * 3. Run 'node scripts/analyze-material-css.mjs' to run this file.
+ * 4. Check tmp/_material-colors.scss for the modified color palette that has different shades of magenta for each un-used color in the palette.
+ * 5. If you saved changes to the tmp/material.css file, then you will have to regenerate it for the rgba->hex part of this script to work.
+ */
 
 const rgbaRe = /(rgba\()(\d+, \d+, \d+, \d+(\.\d+)?\))/g;
 
-const materialScssPath = getPath(['src', 'styles', 'material-theme', '_ui-custom-theme-2.scss']);
+const materialScssPath = getPath(['src', 'styles', 'material-theme', '_ui-base-theme.scss']);
 const materialScss = readFile(materialScssPath);
 
 const materialCssPath = getPath(['tmp', 'material.css']);
@@ -17,8 +26,8 @@ const rgbaToHex = (rgba) => {
     .slice(5, rgba.length - 1)
     .split(',')
     .map((s) => s.trim());
-  nums[3] = Math.floor(255 * [parseFloat(nums[3])]);
-  const hex = nums.map((n) => Number(n).toString(16)).join('');
+  nums[3] = Math.round(255 * [parseFloat(nums[3])]);
+  const hex = nums.map((n) => `00${Number(n).toString(16)}`.slice(-2)).join('');
   return `#${hex}`;
 };
 
@@ -27,8 +36,6 @@ allRGBA.forEach((c) => {
   const re = RegExp(c, 'g');
   materialCss = materialCss.replace(re, rgbaToHex);
 });
-
-// console.log('materialCss :>> ', materialCss);
 
 const getFoundCounts = (scss) => {
   const colors = scss
@@ -48,59 +55,33 @@ const getFoundCounts = (scss) => {
 
 const r = '#ff';
 let g = 0;
-let b = 0;
+let b = -1;
 
 const getMagenta = () => {
   return `${r}0${g}f${Number(b).toString(16)}`;
 };
 
+let used = 0;
+let unused = 0;
 const getColors = (found) => {
   const colors = found.map((c) => {
+    b += 1;
+
     if (c.count === 0) {
+      unused += 1;
       return getMagenta();
     }
-    b += 1;
+
+    used += 1;
     return c.color;
   });
 
   g += 1;
-  b = 0;
+  b = -1;
 
   return colors;
 };
 
-const palettes = [];
-const primaryScss = materialScss.split('$primary')[1].split('$secondary')[0];
-const foundInPrimary = getFoundCounts(primaryScss);
-const primaryPalette = getColors(foundInPrimary);
-palettes.push(primaryPalette);
-
-const secondaryScss = materialScss.split('$secondary')[1].split('$tertiary')[0];
-const foundInSecondary = getFoundCounts(secondaryScss);
-const secondaryPalette = getColors(foundInSecondary);
-palettes.push(secondaryPalette);
-
-const tertiaryScss = materialScss.split('$tertiary')[1].split('$neutral')[0];
-const foundInTertiary = getFoundCounts(tertiaryScss);
-const tertiaryPalette = getColors(foundInTertiary);
-palettes.push(tertiaryPalette);
-
-const neutralScss = materialScss.split('$neutral')[1].split('$neutral-variant')[0];
-const foundInNeutral = getFoundCounts(neutralScss);
-const neutralPalette = getColors(foundInNeutral);
-palettes.push(neutralPalette);
-
-const neutralvariantScss = materialScss.split('$neutral-variant')[1].split('$error')[0];
-const foundInNeutralVariant = getFoundCounts(neutralvariantScss);
-const neutralvariantPalette = getColors(foundInNeutralVariant);
-palettes.push(neutralvariantPalette);
-
-const errorScss = materialScss.split('$error')[1].split('$_palettes')[0];
-const foundInError = getFoundCounts(errorScss);
-const errorPalette = getColors(foundInError);
-palettes.push(errorPalette);
-
-const indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
 const paletteNames = [
   '$primary',
   '$secondary',
@@ -109,6 +90,18 @@ const paletteNames = [
   '$neutral-variant',
   '$error',
 ];
+
+const palettes = [];
+paletteNames.forEach((p, i) => {
+  const begin = p;
+  const end = paletteNames[i + 1] || '$_palettes';
+  const scss = materialScss.split(begin)[1].split(end)[0];
+  const found = getFoundCounts(scss);
+  const palette = getColors(found);
+  palettes.push(palette);
+});
+
+const indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
 const generateScss = () => {
   const styles = paletteNames.map((p, i) => {
     const x = palettes[i].map((c, i) => `${indices[i]}: ${c}`);
@@ -120,4 +113,12 @@ const generateScss = () => {
 };
 
 const scss = generateScss();
-console.log(scss);
+const materialColorsPath = getPath(['tmp', '_material-colors.scss']);
+writeFile(materialColorsPath, scss, true);
+
+// comment this out if you don't want to save the rgba -> hex conversions in your material.css file
+writeFile(materialCssPath, materialCss, true);
+
+// console.log(scss);
+console.log('used colors :>> ', used);
+console.log('unused colors :>> ', unused);

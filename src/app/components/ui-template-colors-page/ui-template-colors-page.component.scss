@@ -6,6 +6,11 @@
 :host {
   @extend .page;
 
+  @if mat.get-theme-type($theme) == dark {
+    background-color: mat.get-theme-color($theme, neutral, 0);
+  } @else {
+  }
+
   .color {
     padding: 0.5rem;
     width: 10rem;

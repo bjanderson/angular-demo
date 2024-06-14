@@ -4,6 +4,7 @@
 @import './_ui-density.scss';
 @import './_ui-typography.scss';
 
+// material $blue-palette
 $primary: (
   0: #000000,
   10: #00006e,
@@ -22,8 +23,30 @@ $primary: (
   99: #fffbff,
   100: #ffffff,
 );
+
+// material $cyan-palette
 $secondary: (
   0: #000001,
+  10: #002020,
+  20: #003737,
+  25: #004343,
+  30: #004f4f,
+  35: #005c5c,
+  40: #006a6a,
+  50: #008585,
+  60: #00a1a1,
+  70: #00bebe,
+  80: #00dddd,
+  90: #00fbfb,
+  95: #adfffe,
+  98: #e2fffe,
+  99: #f1fffe,
+  100: #fffffe,
+);
+
+// material $green-palette
+$tertiary: (
+  0: #000002,
   10: #002200,
   20: #013a00,
   25: #014600,
@@ -38,10 +61,12 @@ $secondary: (
   95: #cbffb8,
   98: #edffe1,
   99: #f7ffee,
-  100: #fffff1,
+  100: #fffffd,
 );
-$tertiary: (
-  0: #000002,
+
+// material $yellow-palette
+$neutral: (
+  0: #000003,
   10: #1d1d00,
   20: #323200,
   25: #3e3e00,
@@ -55,45 +80,31 @@ $tertiary: (
   90: #eaea00,
   95: #f9f900,
   98: #fffeac,
-  99: #fffbff,
-  100: #fffff2,
+  99: #fffbfe,
+  100: #fffffc,
 );
-$neutral: (
-  0: #000003,
-  10: #1b1b1f,
-  20: #303034,
-  25: #3c3b3f,
-  30: #47464a,
-  35: #535256,
-  40: #5f5e62,
-  50: #78767a,
-  60: #929094,
-  70: #adaaaf,
-  80: #c8c5ca,
-  90: #e5e1e6,
-  95: #f3eff4,
-  98: #fcf8fd,
-  99: #fffbff,
-  100: #fffff3,
-);
+
+// material $orange-palette
 $neutral-variant: (
   0: #000004,
-  10: #1b1b23,
-  20: #303038,
-  25: #3b3b43,
-  30: #46464f,
-  35: #52515b,
-  40: #5e5d67,
-  50: #777680,
-  60: #91909a,
-  70: #acaab4,
-  80: #c7c5d0,
-  90: #e4e1ec,
-  95: #f2effa,
-  98: #fbf8ff,
-  99: #fffbff,
-  100: #fffff4,
+  10: #311300,
+  20: #502400,
+  25: #612d00,
+  30: #723600,
+  35: #843f00,
+  40: #964900,
+  50: #bc5d00,
+  60: #e37100,
+  70: #ff8e36,
+  80: #ffb787,
+  90: #ffdcc7,
+  95: #ffede4,
+  98: #fff8f5,
+  99: #fffbfd,
+  100: #fffffb,
 );
+
+// material $red-palette
 $error: (
   0: #000005,
   10: #410000,
@@ -109,8 +120,8 @@ $error: (
   90: #ffdad4,
   95: #ffedea,
   98: #fff8f6,
-  99: #fffbff,
-  100: #fffff5,
+  99: #fffbfc,
+  100: #fffffa,
 );
 
 $_palettes: (
@@ -131,7 +142,7 @@ $_rest: (
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 
-$custom-light-theme-2: mat.define-theme(
+$base-theme-light: mat.define-theme(
   (
     color: (
       theme-type: light,
@@ -143,7 +154,7 @@ $custom-light-theme-2: mat.define-theme(
   )
 );
 
-$custom-dark-theme-2: mat.define-theme(
+$base-theme-dark: mat.define-theme(
   (
     color: (
       theme-type: dark,
