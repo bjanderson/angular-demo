@@ -1,0 +1,1 @@
+export * from './ui-template-expansion-panel-page.component'

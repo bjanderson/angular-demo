@@ -1,0 +1,1 @@
+export * from './ui-template-divider-page.component'

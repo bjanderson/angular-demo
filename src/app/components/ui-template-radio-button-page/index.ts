@@ -1,0 +1,1 @@
+export * from './ui-template-radio-button-page.component'

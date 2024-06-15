@@ -1,0 +1,1 @@
+export * from './ui-template-grid-list-page.component'

@@ -1,15 +1,10 @@
 @use '@angular/material' as mat;
-@import '../material.scss';
+@import 'material-theme/selected-theme.scss';
 @import '_colors.scss';
 @import '_page.scss';
 
 :host {
   @extend .page;
-
-  @if mat.get-theme-type($theme) == dark {
-    background-color: mat.get-theme-color($theme, neutral, 0);
-  } @else {
-  }
 
   .color {
     padding: 0.5rem;

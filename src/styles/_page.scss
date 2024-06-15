@@ -1,8 +1,16 @@
+@use '@angular/material' as mat;
+@import 'material-theme/selected-theme.scss';
+
 .page {
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+
+  @if mat.get-theme-type($theme) == dark {
+    background-color: mat.get-theme-color($theme, neutral, 0);
+  } @else {
+  }
 }
 
 .page-header {

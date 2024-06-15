@@ -1,0 +1,1 @@
+export * from './ui-template-button-toggle-page.component'

@@ -1,0 +1,1 @@
+export * from './ui-template-tabs-page.component'

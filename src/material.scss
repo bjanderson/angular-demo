@@ -3,19 +3,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-@import 'material-theme/_ui-base-theme.scss';
-@import 'material-theme/_ui-modified-light-theme.scss';
-@import 'material-theme/_ui-modified-dark-theme.scss';
-@import 'material-theme/_ui-simple-theme.scss';
-
-// $theme: $base-theme-light;
-// $theme: $modified-theme-light;
-
-// $theme: $base-theme-dark;
-$theme: $modified-theme-dark;
-
-// $theme: $simple-light-theme;
-// $theme: $simple-dark-theme;
+@import 'material-theme/_selected-theme.scss';
 
 :root {
   @include mat.core();
