@@ -131,7 +131,7 @@ $_rest: (
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 
-$modified-theme-dark: mat.define-theme(
+$modified-dark-theme: mat.define-theme(
   (
     color: (
       theme-type: dark,

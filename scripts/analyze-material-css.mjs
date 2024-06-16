@@ -101,9 +101,12 @@ paletteNames.forEach((p, i) => {
   palettes.push(palette);
 });
 
-const indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
 const generateScss = () => {
   const styles = paletteNames.map((p, i) => {
+    let indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
+    if (p === '$neutral') {
+      indices = [...indices, 4, 6, 12, 17, 22, 24, 87, 92, 94, 96];
+    }
     const x = palettes[i].map((c, i) => `${indices[i]}: ${c}`);
     return `${p}: (\n${x.join(',\n')}\n)`;
   });
