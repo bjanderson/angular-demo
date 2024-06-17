@@ -16,14 +16,21 @@ const hexRe = /#[a-z0-9]{3,8}/g;
   const allPaletteColors = getAllPaletteColors();
   const themeColors = getThemeColors();
   const usedColors = getUsedColors(allPaletteColors, themeColors);
-  const palette = getPalette(usedColors);
+  const missedColors = themeColors.filter((c) => !usedColors.includes(c));
+  const duplicateColors = usedColors.filter((v, i, a) => a.indexOf(v) !== i);
+  console.log('themeColors :>> ', themeColors);
+  console.log('usedColors :>> ', usedColors);
+  console.log('num usedColors :>> ', usedColors.length);
+  console.log('missedColors :>> ', missedColors);
+  console.log('duplicateColors :>> ', duplicateColors);
 
+  // const palette = getPalette(usedColors);
   // console.log('usedColors :>> ', usedColors);
   // console.log('num usedColors :>> ', usedColors.length);
   // writeOutput(palette);
 
   const myCustomPalette = mapMyCustomPalette(usedColors);
-  console.log('myCustomPalette :>> ', myCustomPalette);
+  // console.log('myCustomPalette :>> ', myCustomPalette);
   writeOutput(myCustomPalette);
 })();
 
@@ -78,18 +85,12 @@ function rgbaToHex(rgba) {
 }
 
 function getUsedColors(allPaletteColors, themeColors) {
-  const colors = allPaletteColors
-    .map((c) => themeColors.find((t) => t.includes(c)))
-    .filter((v, i, a) => v != null && a.indexOf(v) === i);
+  let colors = [];
+  allPaletteColors.forEach((c) => {
+    colors.push(...themeColors.filter((t) => t.includes(c)));
+  });
+  colors = colors.filter((v, i, a) => v != null && a.indexOf(v) === i);
   return colors;
-}
-
-function getPalette(usedColors) {
-  const allPalettesPath = getPath(['src', 'styles', 'material-theme', '_all-palettes.scss']);
-  const allPalettes = readFile(allPalettesPath);
-  const lines = allPalettes.split('\n').filter((t) => hexFilter(t, usedColors));
-
-  return lines;
 }
 
 function hexFilter(text, usedColors) {
@@ -112,7 +113,7 @@ function mapMyCustomPalette(usedColors) {
   ]);
   const myMagentaPalette = readFile(myMagentaPalettePath);
   const myMagentaLines = myMagentaPalette.split('\n');
-  console.log('myMagentaLines.length :>> ', myMagentaLines.length);
+  // console.log('myMagentaLines.length :>> ', myMagentaLines.length);
 
   const bluePalettePath = getPath([
     'src',
@@ -123,7 +124,7 @@ function mapMyCustomPalette(usedColors) {
   ]);
   const bluePalette = readFile(bluePalettePath);
   const blueLines = bluePalette.split('\n');
-  console.log('blueLines.length :>> ', blueLines.length);
+  // console.log('blueLines.length :>> ', blueLines.length);
 
   const myCustomPaletteLines = ['$my-custom-palette: ('];
 
@@ -139,6 +140,14 @@ function mapMyCustomPalette(usedColors) {
 
   return myCustomPaletteLines.join('\n');
 }
+
+// function getPalette(usedColors) {
+//   const allPalettesPath = getPath(['src', 'styles', 'material-theme', '_all-palettes.scss']);
+//   const allPalettes = readFile(allPalettesPath);
+//   const lines = allPalettes.split('\n').filter((t) => hexFilter(t, usedColors));
+
+//   return lines;
+// }
 
 // function old() {
 //   const materialScssPath = getPath(['src', 'styles', 'material-theme', '_ui-base-theme.scss']);
