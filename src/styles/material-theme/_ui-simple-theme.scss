@@ -4,19 +4,23 @@
 @import './_ui-density.scss';
 @import './_ui-typography.scss';
 
-$palette: mat.$blue-palette;
-// $palette-2: mat.$cyan-palette;
+$palette: $blue-palette;
+$palette-2: $cyan-palette;
+// $palette-2: $blue-palette;
+
+$palette: $my-primary-palette;
+$palette-2: $my-tertiary-palette;
+// $palette-2: $my-primary-palette;
+
 // $palette: $my-magenta-palette;
 // $palette-2: $my-magenta-2-palette;
-// $palette: $my-custom-palette;
-// $palette-2: $my-custom-2-palette;
 
 $simple-light-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
       primary: $palette,
-      tertiary: $palette,
+      tertiary: $palette-2,
     ),
     density: $ui-density,
     typography: $ui-typography,
