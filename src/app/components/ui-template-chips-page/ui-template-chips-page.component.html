@@ -1,1 +1,51 @@
-<div class="ui-template-chips-page">Ui Template Chips Page</div>
+<h1>Chips</h1>
+
+<h2>Basic Chips</h2>
+
+<mat-chip-set aria-label="Fish selection">
+  <mat-chip>One fish</mat-chip>
+  <mat-chip>Two fish</mat-chip>
+  <mat-chip>Three fish</mat-chip>
+  <mat-chip disabled>Four fish</mat-chip>
+</mat-chip-set>
+
+<h2>Chips with input</h2>
+
+<mat-form-field class="example-chip-list">
+  <mat-label>Favorite Fruits</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Enter fruits">
+    @for (fruit of fruits(); track fruit) {
+    <mat-chip-row
+      (removed)="remove(fruit)"
+      [editable]="true"
+      (edited)="edit(fruit, $event)"
+      [aria-description]="'press enter to edit ' + fruit.name"
+    >
+      {{ fruit.name }}
+      <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+        <mat-icon class="icon" aria-hidden="true" fontSet="fas" fontIcon="fa-times"></mat-icon>
+      </button>
+    </mat-chip-row>
+    }
+    <input
+      placeholder="New fruit..."
+      [matChipInputFor]="chipGrid"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)"
+    />
+  </mat-chip-grid>
+</mat-form-field>
+
+<h2>Chips drag-n-drop</h2>
+
+<mat-chip-set
+  class="example-chip"
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)"
+>
+  @for (vegetable of vegetables(); track vegetable.name) {
+  <mat-chip class="example-box" cdkDrag>{{ vegetable.name }}</mat-chip>
+  }
+</mat-chip-set>
