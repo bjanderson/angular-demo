@@ -37,6 +37,8 @@ const hexRe = /#[a-z0-9]{3,8}/g;
     '_my-tertiary-palette.scss',
   ]);
   writeFile(myTertiaryPalettePath, myTertiaryPalette, true);
+
+  createHTML(themeColors);
 })();
 
 function showStats(themeColors, usedColors) {
@@ -79,7 +81,13 @@ function showStats(themeColors, usedColors) {
 }
 
 function getAllPaletteColors() {
-  const allPalettesPath = getPath(['src', 'styles', 'material-theme', '_all-palettes.scss']);
+  const allPalettesPath = getPath([
+    'src',
+    'styles',
+    'material-theme',
+    'palettes',
+    '_all-palettes.scss',
+  ]);
   const allPalettes = readFile(allPalettesPath);
   const colors = Array.from(allPalettes.matchAll(hexRe))
     .join('\n')
@@ -133,66 +141,66 @@ function getUsedColors(allPaletteColors, themeColors) {
   return colors;
 }
 
-function getMyMagentaPalette() {
-  const myMagentaPalettePath = getPath([
+function getPrimaryMagentaPalette() {
+  const primaryMagentaPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_my-magenta-palette.scss',
+    '_primary-magenta-palette.scss',
   ]);
-  const myMagentaPalette = readFile(myMagentaPalettePath);
-  return myMagentaPalette;
+  const primaryMagentaPalette = readFile(primaryMagentaPalettePath);
+  return primaryMagentaPalette;
 }
 
-function getMyMagenta2Palette() {
-  const myMagentaPalettePath = getPath([
+function getTertiaryMagentaPalette() {
+  const tertiaryMagentaPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_my-magenta-2-palette.scss',
+    '_tertiary-magenta-palette.scss',
   ]);
-  const myMagentaPalette = readFile(myMagentaPalettePath);
-  return myMagentaPalette;
+  const tertiaryMagentaPalette = readFile(tertiaryMagentaPalettePath);
+  return tertiaryMagentaPalette;
 }
 
-function getBluePalette() {
-  const bluePalettePath = getPath([
+function getPrimaryPalette() {
+  const primaryPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_blue-palette.scss',
+    '_primary-palette.scss',
   ]);
-  const bluePalette = readFile(bluePalettePath);
-  return bluePalette;
+  const primaryPalette = readFile(primaryPalettePath);
+  return primaryPalette;
 }
 
-function getCyanPalette() {
-  const cyanPalettePath = getPath([
+function getTertiaryPalette() {
+  const tertiaryPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_cyan-palette.scss',
+    '_tertiary-palette.scss',
   ]);
-  const cyanPalette = readFile(cyanPalettePath);
-  return cyanPalette;
+  const tertiaryPalette = readFile(tertiaryPalettePath);
+  return tertiaryPalette;
 }
 
 function mapMyPrimaryPalette(usedColors) {
-  const myMagentaLines = getMyMagentaPalette().split('\n');
-  const blueLines = getBluePalette().split('\n');
+  const primaryMagentaLines = getPrimaryMagentaPalette().split('\n');
+  const primaryLines = getPrimaryPalette().split('\n');
 
   const myPrimaryPaletteLines = ['$my-primary-palette: ('];
 
-  blueLines.forEach((b, i) => {
+  primaryLines.forEach((p, i) => {
     if (i > 0) {
-      if (hexFilter(b, usedColors)) {
-        myPrimaryPaletteLines.push(b);
+      if (hexFilter(p, usedColors)) {
+        myPrimaryPaletteLines.push(p);
       } else {
-        myPrimaryPaletteLines.push(myMagentaLines[i]);
+        myPrimaryPaletteLines.push(primaryMagentaLines[i]);
       }
     }
   });
@@ -201,17 +209,17 @@ function mapMyPrimaryPalette(usedColors) {
 }
 
 function mapMyTertiaryPalette(usedColors) {
-  const myMagenta2Lines = getMyMagenta2Palette().split('\n');
-  const cyanLines = getCyanPalette().split('\n');
+  const tertiaryMagentaLines = getTertiaryMagentaPalette().split('\n');
+  const tertiaryLines = getTertiaryPalette().split('\n');
 
   const myTertiaryPaletteLines = ['$my-tertiary-palette: ('];
 
-  cyanLines.forEach((c, i) => {
+  tertiaryLines.forEach((t, i) => {
     if (i > 0) {
-      if (hexFilter(c, usedColors)) {
-        myTertiaryPaletteLines.push(c);
+      if (hexFilter(t, usedColors)) {
+        myTertiaryPaletteLines.push(t);
       } else {
-        myTertiaryPaletteLines.push(myMagenta2Lines[i]);
+        myTertiaryPaletteLines.push(tertiaryMagentaLines[i]);
       }
     }
   });
@@ -229,133 +237,24 @@ function hexFilter(text, usedColors) {
   return usedColors.includes(hex);
 }
 
-// function writeOutput(obj) {
-//   const outputPath = getPath(['tmp', 'output.txt']);
-//   const text = typeof obj === 'string' ? obj : JSON.stringify(obj, null, 2);
-//   writeFile(outputPath, text, true);
-// }
+function createHTML(themeColors) {
+  const template = `<div class="row color" style="background: THEME_COLOR;"><span style="background: #ffffff66">THEME_COLOR</span></div>`;
+  const re = RegExp('THEME_COLOR', 'g');
+  const lines = themeColors.map((c, i) => {
+    let str = template.replace(re, c);
+    return str;
+  });
 
-// function getPalette(usedColors) {
-//   const allPalettesPath = getPath(['src', 'styles', 'material-theme', '_all-palettes.scss']);
-//   const allPalettes = readFile(allPalettesPath);
-//   const lines = allPalettes.split('\n').filter((t) => hexFilter(t, usedColors));
+  let html = `<div class="col mrl0-5">`;
+  lines.forEach((l, i) => {
+    if (i % 10 === 0) {
+      html += `</div>\n<div class="col mrl0-5">\n`;
+    }
+    html += l;
+  });
+  html += `</div>
+  `;
 
-//   return lines;
-// }
-
-// function old() {
-//   const materialScssPath = getPath(['src', 'styles', 'material-theme', '_ui-base-theme.scss']);
-//   const materialScss = readFile(materialScssPath);
-
-//   const materialCssPath = getPath(['tmp', 'material.css']);
-//   let materialCss = readFile(materialCssPath);
-
-//   const allRGBA = Array.from(materialCss.matchAll(rgbaRe))
-//     .map((m) => (m ? m[0] : null))
-//     .filter((v, i, a) => v != null && a.indexOf(v) === i);
-
-//   const rgbaToHex = (rgba) => {
-//     const nums = rgba
-//       .slice(5, rgba.length - 1)
-//       .split(',')
-//       .map((s) => s.trim());
-//     nums[3] = Math.round(255 * [parseFloat(nums[3])]);
-//     const hex = nums.map((n) => `00${Number(n).toString(16)}`.slice(-2)).join('');
-//     return `#${hex}`;
-//   };
-
-//   allRGBA.forEach((c) => {
-//     c = c.replace('(', '\\(').replace(')', '\\)');
-//     const re = RegExp(c, 'g');
-//     materialCss = materialCss.replace(re, rgbaToHex);
-//   });
-
-//   const getFoundCounts = (scss) => {
-//     const colors = scss
-//       ?.replace(/,/g, '')
-//       .split(':')
-//       .map((x) => x.split('\n')[0].trim())
-//       .filter((x) => x != null && x.includes('#'));
-
-//     const foundInCss = colors.map((c) => {
-//       const re = RegExp(c, 'g');
-//       const len = Array.from(materialCss.matchAll(re)).length;
-//       return { color: c, count: len };
-//     });
-
-//     return foundInCss;
-//   };
-
-//   const r = '#ff';
-//   let g = 0;
-//   let b = -1;
-
-//   const getMagenta = () => {
-//     return `${r}0${g}f${Number(b).toString(16)}`;
-//   };
-
-//   let used = 0;
-//   let unused = 0;
-//   const getColors = (found) => {
-//     const colors = found.map((c) => {
-//       b += 1;
-
-//       if (c.count === 0) {
-//         unused += 1;
-//         return getMagenta();
-//       }
-
-//       used += 1;
-//       return c.color;
-//     });
-
-//     g += 1;
-//     b = -1;
-
-//     return colors;
-//   };
-
-//   const paletteNames = [
-//     '$primary',
-//     '$secondary',
-//     '$tertiary',
-//     '$neutral',
-//     '$neutral-variant',
-//     '$error',
-//   ];
-
-//   const palettes = [];
-//   paletteNames.forEach((p, i) => {
-//     const begin = p;
-//     const end = paletteNames[i + 1] || '$_palettes';
-//     const scss = materialScss.split(begin)[1].split(end)[0];
-//     const found = getFoundCounts(scss);
-//     const palette = getColors(found);
-//     palettes.push(palette);
-//   });
-
-//   const generateScss = () => {
-//     const styles = paletteNames.map((p, i) => {
-//       let indices = [0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100];
-//       if (p === '$neutral') {
-//         indices = [...indices, 4, 6, 12, 17, 22, 24, 87, 92, 94, 96];
-//       }
-//       const x = palettes[i].map((c, i) => `${indices[i]}: ${c}`);
-//       return `${p}: (\n${x.join(',\n')}\n)`;
-//     });
-
-//     let scss = styles.join(';\n');
-//     return scss + ';';
-//   };
-
-//   const scss = generateScss();
-//   const outputPath = getPath(['tmp', 'output.scss']);
-//   writeFile(outputPath, scss, true);
-
-//   // comment this out if you don't want to save the rgba -> hex conversions in your material.css file
-//   writeFile(materialCssPath, materialCss, true);
-
-//   // console.log(scss);
-//   console.log('used colors :>> ', used);
-//   console.log('unused colors :>> ', unused);
-// }
+  const outputHtmlPath = getPath(['tmp', 'output.html']);
+  writeFile(outputHtmlPath, html, true);
+}

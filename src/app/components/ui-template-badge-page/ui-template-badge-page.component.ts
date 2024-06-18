@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
   selector: 'ui-ui-template-badge-page',
   standalone: true,
   styleUrl: './ui-template-badge-page.component.scss',
   templateUrl: './ui-template-badge-page.component.html',
-  imports: [],
+  imports: [MatBadgeModule],
 })
-export class UiTemplateBadgePageComponent {}
+export class UiTemplateBadgePageComponent {
+  hidden = false;
+
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
+}

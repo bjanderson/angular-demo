@@ -1,14 +1,14 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-@import 'material-theme/_selected-theme.scss';
+@import 'material-theme/_ui-theme.scss';
 
-// @debug $theme;
+// @debug $ui-theme;
 
 @include mat.core();
-@include mat.color-variants-backwards-compatibility($theme);
-@include mat.typography-hierarchy($theme, $back-compat: true);
+@include mat.color-variants-backwards-compatibility($ui-theme);
+@include mat.typography-hierarchy($ui-theme, $back-compat: true);
 
 :root {
-  @include mat.all-component-themes($theme);
+  @include mat.all-component-themes($ui-theme);
 }

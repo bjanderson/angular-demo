@@ -1,10 +1,4 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-@import './_ui-density.scss';
-@import './_ui-typography.scss';
-
-$primary: (
+$primary-palette: (
   0: #000000,
   10: #00006e,
   20: #0001ac,
@@ -22,7 +16,7 @@ $primary: (
   99: #fffbff,
   100: #ffffff,
   secondary: (
-    0: #000000,
+    0: #000001,
     10: #191a2c,
     20: #2e2f42,
     25: #393a4d,
@@ -36,11 +30,11 @@ $primary: (
     90: #e1e0f9,
     95: #f1efff,
     98: #fbf8ff,
-    99: #fffbff,
-    100: #ffffff,
+    99: #fffbfe,
+    100: #fffffe,
   ),
   neutral: (
-    0: #000000,
+    0: #000002,
     10: #1b1b1f,
     20: #303034,
     25: #3c3b3f,
@@ -54,8 +48,8 @@ $primary: (
     90: #e5e1e6,
     95: #f3eff4,
     98: #fcf8fd,
-    99: #fffbff,
-    100: #ffffff,
+    99: #fffbfd,
+    100: #fffffd,
     4: #0b0b0c,
     6: #101013,
     12: #1f1f23,
@@ -68,7 +62,7 @@ $primary: (
     96: #f6f2f7,
   ),
   neutral-variant: (
-    0: #000000,
+    0: #000003,
     10: #1b1b23,
     20: #303038,
     25: #3b3b43,
@@ -82,11 +76,11 @@ $primary: (
     90: #e4e1ec,
     95: #f2effa,
     98: #fbf8ff,
-    99: #fffbff,
-    100: #ffffff,
+    99: #fffbfc,
+    100: #fffffc,
   ),
   error: (
-    0: #000000,
+    0: #000004,
     10: #410002,
     20: #690005,
     25: #7e0007,
@@ -100,37 +94,7 @@ $primary: (
     90: #ffdad6,
     95: #ffedea,
     98: #fff8f7,
-    99: #fffbff,
-    100: #ffffff,
+    99: #fffbfb,
+    100: #fffffb,
   ),
-);
-
-$_palettes: (
-  primary: $primary,
-  secondary: $secondary,
-  tertiary: $tertiary,
-  neutral: $neutral,
-  neutral-variant: $neutral-variant,
-  error: $error,
-);
-
-// $_rest: (
-//   secondary: map.get($_palettes, secondary),
-//   neutral: map.get($_palettes, neutral),
-//   neutral-variant: map.get($_palettes, neutral-variant),
-//   error: map.get($_palettes, error),
-// );
-// $_primary: map.merge(map.get($_palettes, primary), $_rest);
-// $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
-
-$modified-light-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: $primary,
-      tertiary: $primary,
-    ),
-    density: $ui-density,
-    typography: $ui-typography,
-  )
 );

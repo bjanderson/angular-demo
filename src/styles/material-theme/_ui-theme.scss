@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+
+@import './palettes/_index.scss';
+@import './_ui-density.scss';
+@import './_ui-typography.scss';
+
+$primary: $primary-palette;
+$tertiary: $tertiary-palette;
+
+$primary: $my-primary-palette;
+$tertiary: $my-tertiary-palette;
+
+$ui-light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $primary,
+      tertiary: $tertiary,
+    ),
+    density: $ui-density,
+    typography: $ui-typography,
+  )
+);
+
+// $ui-dark-theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: $primary,
+//       tertiary: $tertiary,
+//     ),
+//     density: $ui-density,
+//     typography: $ui-typography,
+//   )
+// );
+
+$ui-theme: $ui-light-theme;
