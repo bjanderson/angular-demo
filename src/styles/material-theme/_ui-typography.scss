@@ -1,6 +1,8 @@
+@import '_fonts.scss';
+
 $ui-typography: (
-  brand-family: 'Arial, sans-serif',
-  plain-family: 'Arial, sans-serif',
+  brand-family: $arial,
+  plain-family: $arial,
   bold-weight: 900,
   medium-weight: 700,
   regular-weight: 400,

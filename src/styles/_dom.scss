@@ -1,3 +1,5 @@
+@import '_fonts.scss';
+
 html {
   box-sizing: border-box;
 }
@@ -15,9 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px !important;
-  font-family: $roboto;
-  // background-color: $black-three;
-  // color: $white-three;
+  font-family: $arial;
 }
 
 @keyframes fade-in {
