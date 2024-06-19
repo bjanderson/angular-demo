@@ -1,1 +1,10 @@
-<div class="ui-template-select-page">Ui Template Select Page</div>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select [formControl]="selectCtrl">
+    @for (food of foods; track food) {
+    <mat-option [value]="food">{{ food.viewValue }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<div class="row">You selected: {{ selectCtrl.value | json }}</div>

@@ -1,1 +1,18 @@
-<div class="ui-template-slider-page">Ui Template Slider Page</div>
+<h2>Slider with thumb</h2>
+
+<mat-slider min="0" max="100000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
+  <input matSliderThumb />
+</mat-slider>
+
+<h2>Basic Slider</h2>
+
+<mat-slider>
+  <input matSliderThumb />
+</mat-slider>
+
+<h2>Range Slider</h2>
+
+<mat-slider min="200" max="500">
+  <input value="300" matSliderStartThumb />
+  <input value="400" matSliderEndThumb />
+</mat-slider>
