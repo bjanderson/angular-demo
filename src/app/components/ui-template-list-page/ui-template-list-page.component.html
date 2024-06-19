@@ -1,1 +1,46 @@
-<div class="ui-template-list-page">Ui Template List Page</div>
+<h2>Basic List</h2>
+
+<mat-list role="list">
+  <mat-list-item role="listitem">Item 1</mat-list-item>
+  <mat-list-item role="listitem">Item 2</mat-list-item>
+  <mat-list-item role="listitem">Item 3</mat-list-item>
+</mat-list>
+
+<h2>List with sections</h2>
+
+<mat-list>
+  <div mat-subheader>Folders</div>
+
+  @for (folder of folders; track folder) {
+  <mat-list-item>
+    <div class="row center-v">
+      <mat-icon class="icon mr0-5" aria-hidden="true" fontSet="fas" fontIcon="fa-folder"></mat-icon>
+      <div class="col">
+        <div matListItemTitle>{{ folder.name }}</div>
+        <div matListItemLine>{{ folder.updated | date }}</div>
+      </div>
+    </div>
+  </mat-list-item>
+  }
+
+  <mat-divider></mat-divider>
+
+  <div mat-subheader>Notes</div>
+
+  @for (note of notes; track note) {
+  <mat-list-item>
+    <div class="row center-v">
+      <mat-icon
+        class="icon mr0-5"
+        aria-hidden="true"
+        fontSet="fas"
+        fontIcon="fa-note-sticky"
+      ></mat-icon>
+      <div class="col">
+        <div matListItemTitle>{{ note.name }}</div>
+        <div matListItemLine>{{ note.updated | date }}</div>
+      </div>
+    </div>
+  </mat-list-item>
+  }
+</mat-list>
