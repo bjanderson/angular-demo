@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface Task {
@@ -13,9 +13,11 @@ export interface Task {
   standalone: true,
   styleUrl: './ui-template-checkbox-page.component.scss',
   templateUrl: './ui-template-checkbox-page.component.html',
-  imports: [FormsModule, MatCheckboxModule],
+  imports: [ReactiveFormsModule, MatCheckboxModule],
 })
 export class UiTemplateCheckboxPageComponent {
+  checkMe = new FormControl<boolean>(false);
+
   readonly task = signal<Task>({
     name: 'Parent task',
     completed: false,

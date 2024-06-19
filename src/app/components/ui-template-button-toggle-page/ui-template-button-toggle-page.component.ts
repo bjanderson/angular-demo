@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
@@ -7,8 +7,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   standalone: true,
   styleUrl: './ui-template-button-toggle-page.component.scss',
   templateUrl: './ui-template-button-toggle-page.component.html',
-  imports: [FormsModule, MatButtonToggleModule],
+  imports: [ReactiveFormsModule, MatButtonToggleModule],
 })
 export class UiTemplateButtonTogglePageComponent {
-  toggledButton = 'one';
+  toggledButton = new FormControl<string>('one');
 }

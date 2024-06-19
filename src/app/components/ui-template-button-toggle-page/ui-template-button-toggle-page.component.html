@@ -1,7 +1,7 @@
 <h1>Button Toggle</h1>
 
 <div class="row">
-  <mat-button-toggle-group [(ngModel)]="toggledButton">
+  <mat-button-toggle-group [formControl]="toggledButton">
     <mat-button-toggle color="primary" value="one">One</mat-button-toggle>
     <mat-button-toggle color="accent" value="two">Two</mat-button-toggle>
     <mat-button-toggle color="warn" value="three">Three</mat-button-toggle>

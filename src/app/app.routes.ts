@@ -96,14 +96,6 @@ export const routes: Routes = [
       },
 
       {
-        path: 'divider',
-        loadComponent: () =>
-          import('./components/ui-template-divider-page').then(
-            (c) => c.UiTemplateDividerPageComponent,
-          ),
-      },
-
-      {
         path: 'expansion-panel',
         loadComponent: () =>
           import('./components/ui-template-expansion-panel-page').then(
