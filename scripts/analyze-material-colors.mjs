@@ -11,12 +11,13 @@ import { getPath, readFile, writeFile } from './file-io.mjs';
 
 const rgbaRe = /(rgba\()(\d+, \d+, \d+, \d+(\.\d+)?\))/g;
 const hexRe = /#[a-z0-9]{3,8}/g;
+const primaryColors = {};
+const tertiaryColors = {};
 
 (function run() {
   const allPaletteColors = getAllPaletteColors();
   const themeColors = getThemeColors();
   const usedColors = getUsedColors(allPaletteColors, themeColors);
-  showStats(themeColors, usedColors);
 
   const myPrimaryPalette = mapMyPrimaryPalette(usedColors);
   const myPrimaryPalettePath = getPath([
@@ -39,6 +40,8 @@ const hexRe = /#[a-z0-9]{3,8}/g;
   writeFile(myTertiaryPalettePath, myTertiaryPalette, true);
 
   createHTML(themeColors);
+
+  showStats(themeColors, usedColors);
 })();
 
 function showStats(themeColors, usedColors) {
@@ -78,6 +81,9 @@ function showStats(themeColors, usedColors) {
   console.log('');
   console.log('uniqueColors :>> ', uniqueColors, uniqueColors.length);
   console.log('');
+  console.log('primaryColors :>> ', primaryColors);
+  console.log('');
+  console.log('tertiaryColors :>> ', tertiaryColors);
 }
 
 function getAllPaletteColors() {
@@ -192,13 +198,22 @@ function getTertiaryPalette() {
 function mapMyPrimaryPalette(usedColors) {
   const primaryMagentaLines = getPrimaryMagentaPalette().split('\n');
   const primaryLines = getPrimaryPalette().split('\n');
+  let paletteId = 'primary';
 
   const myPrimaryPaletteLines = ['$my-primary-palette: ('];
 
   primaryLines.forEach((p, i) => {
+    const id = p.trim().split(':')[0];
+    if (['secondary', 'neutral', 'neutral-variant', 'error'].includes(id)) {
+      paletteId = id;
+    }
+
     if (i > 0) {
       if (hexFilter(p, usedColors)) {
         myPrimaryPaletteLines.push(p);
+        const level = p.trim().split(':')[0];
+        const val = p.split(':')[1]?.trim();
+        if (val?.match(hexRe)) primaryColors[`${paletteId}-${level}`] = val;
       } else {
         myPrimaryPaletteLines.push(primaryMagentaLines[i]);
       }
@@ -211,13 +226,21 @@ function mapMyPrimaryPalette(usedColors) {
 function mapMyTertiaryPalette(usedColors) {
   const tertiaryMagentaLines = getTertiaryMagentaPalette().split('\n');
   const tertiaryLines = getTertiaryPalette().split('\n');
+  let paletteId = 'primary';
 
   const myTertiaryPaletteLines = ['$my-tertiary-palette: ('];
 
   tertiaryLines.forEach((t, i) => {
+    const id = t.trim().split(':')[0];
+    if (['secondary', 'neutral', 'neutral-variant', 'error'].includes(id)) {
+      paletteId = id;
+    }
     if (i > 0) {
       if (hexFilter(t, usedColors)) {
         myTertiaryPaletteLines.push(t);
+        const level = t.trim().split(':')[0];
+        const val = t.split(':')[1]?.trim();
+        if (val?.match(hexRe)) tertiaryColors[`${paletteId}-${level}`] = val;
       } else {
         myTertiaryPaletteLines.push(tertiaryMagentaLines[i]);
       }
