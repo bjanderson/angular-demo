@@ -7,7 +7,15 @@ import { matCheckboxConfigProvider } from './mat-checkbox.config';
 import { matChipsConfigProvider } from './mat-chips.config';
 import { matDialogConfigProvider } from './mat-dialog.config';
 import { matExpansionPanelConfigProvider } from './mat-expansion-panel.config';
+import { matFormFieldConfigProvider } from './mat-form-field.config';
+import { matIconConfigProvider } from './mat-icon.config';
+import { matMenuConfigProvider } from './mat-menu.config';
 import { matPaginatorConfigProvider } from './mat-paginator.config';
+import { matProgressBarConfigProvider } from './mat-progress-bar.config';
+import { matProgressSpinnerConfigProvider } from './mat-progress-spinner.config';
+import { matSlideToggleConfigProvider } from './mat-slide-toggle.config';
+import { matSnackBarConfigProvider } from './mat-snack-bar.config copy';
+import { matSortConfigProvider } from './mat-sort.config';
 
 export function provideMaterialConfigs() {
   return makeEnvironmentProviders([
@@ -19,6 +27,14 @@ export function provideMaterialConfigs() {
     matChipsConfigProvider,
     matDialogConfigProvider,
     matExpansionPanelConfigProvider,
+    matFormFieldConfigProvider,
+    matIconConfigProvider,
+    matMenuConfigProvider,
     matPaginatorConfigProvider,
+    matProgressBarConfigProvider,
+    matProgressSpinnerConfigProvider,
+    matSlideToggleConfigProvider,
+    matSnackBarConfigProvider,
+    matSortConfigProvider,
   ]);
 }
