@@ -1,0 +1,173 @@
+// .mat-accent {
+//   --mat-option-selected-state-label-text-color: #002020;
+//   --mat-option-selected-state-layer-color: #00fbfb;
+//   --mdc-circular-progress-active-indicator-color: #006a6a;
+//   --mat-full-pseudo-checkbox-selected-icon-color: #006a6a;
+//   --mat-full-pseudo-checkbox-selected-checkmark-color: #fffffa;
+//   --mat-minimal-pseudo-checkbox-selected-checkmark-color: #006a6a;
+//   --mat-stepper-header-selected-state-icon-background-color: #006a6a;
+//   --mat-stepper-header-selected-state-icon-foreground-color: #fffffa;
+//   --mat-stepper-header-edit-state-icon-background-color: #006a6a;
+//   --mat-stepper-header-edit-state-icon-foreground-color: #fffffa;
+// }
+// .mat-accent.mat-icon {
+//   --mat-icon-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-checkbox {
+//   --mdc-checkbox-selected-checkmark-color: #fffffa;
+//   --mdc-checkbox-selected-focus-icon-color: #006a6a;
+//   --mdc-checkbox-selected-hover-icon-color: #006a6a;
+//   --mdc-checkbox-selected-icon-color: #006a6a;
+//   --mdc-checkbox-selected-focus-state-layer-color: #006a6a;
+//   --mdc-checkbox-selected-hover-state-layer-color: #006a6a;
+//   --mdc-checkbox-unselected-pressed-state-layer-color: #006a6a;
+//   --mat-checkbox-disabled-label-color: rgba(27, 27, 31, 0.38);
+//   --mat-checkbox-label-text-color: #1b1b1f;
+// }
+// .mat-accent.mat-mdc-slider {
+//   --mdc-slider-handle-color: #006a6a;
+//   --mdc-slider-focus-handle-color: #006a6a;
+//   --mdc-slider-hover-handle-color: #006a6a;
+//   --mdc-slider-active-track-color: #006a6a;
+//   --mdc-slider-with-tick-marks-active-container-color: #fffffa;
+//   --mdc-slider-label-container-color: #006a6a;
+//   --mdc-slider-label-label-text-color: #fffffa;
+//   --mdc-slider-with-overlap-handle-outline-color: #fffffa;
+//   --mat-slider-ripple-color: #006a6a;
+//   --mat-slider-hover-state-layer-color: rgba(0, 106, 106, 0.05);
+//   --mat-slider-focus-state-layer-color: rgba(0, 106, 106, 0.2);
+// }
+// .mat-accent.mat-mdc-tab-group,
+// .mat-accent.mat-mdc-tab-nav-bar {
+//   --mdc-tab-indicator-active-indicator-color: #006a6a;
+//   --mat-tab-header-active-focus-indicator-color: #006a6a;
+//   --mat-tab-header-active-hover-indicator-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-slide-toggle {
+//   --mdc-switch-selected-focus-state-layer-color: #006a6a;
+//   --mdc-switch-selected-handle-color: #fffffa;
+//   --mdc-switch-selected-hover-state-layer-color: #006a6a;
+//   --mdc-switch-selected-pressed-state-layer-color: #006a6a;
+//   --mdc-switch-selected-focus-handle-color: #00fbfb;
+//   --mdc-switch-selected-hover-handle-color: #00fbfb;
+//   --mdc-switch-selected-pressed-handle-color: #00fbfb;
+//   --mdc-switch-selected-focus-track-color: #006a6a;
+//   --mdc-switch-selected-hover-track-color: #006a6a;
+//   --mdc-switch-selected-pressed-track-color: #006a6a;
+//   --mdc-switch-selected-track-color: #006a6a;
+//   --mdc-switch-selected-icon-color: #002020;
+//   --mat-switch-track-outline-color: #777680;
+//   --mat-switch-disabled-unselected-track-outline-color: #1b1b1f;
+//   --mat-switch-label-text-color: #1b1b1f;
+// }
+// .mat-accent.mat-mdc-form-field {
+//   --mat-select-focused-arrow-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-radio-button {
+//   --mdc-radio-selected-focus-icon-color: #006a6a;
+//   --mdc-radio-selected-hover-icon-color: #006a6a;
+//   --mdc-radio-selected-icon-color: #006a6a;
+//   --mdc-radio-selected-pressed-icon-color: #006a6a;
+//   --mat-radio-checked-ripple-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-progress-bar {
+//   --mdc-linear-progress-active-indicator-color: #006a6a;
+//   --mdc-linear-progress-track-color: #00fbfb;
+// }
+// .mat-accent.mat-mdc-form-field {
+//   --mdc-filled-text-field-caret-color: #006a6a;
+//   --mdc-filled-text-field-focus-active-indicator-color: #006a6a;
+//   --mdc-filled-text-field-focus-label-text-color: #006a6a;
+//   --mdc-outlined-text-field-caret-color: #006a6a;
+//   --mdc-outlined-text-field-focus-outline-color: #006a6a;
+//   --mdc-outlined-text-field-focus-label-text-color: #006a6a;
+//   --mat-form-field-focus-select-arrow-color: #006a6a;
+// }
+// .mat-accent.mat-datepicker-content {
+//   --mat-datepicker-calendar-date-selected-state-text-color: #fffffa;
+//   --mat-datepicker-calendar-date-selected-state-background-color: #006a6a;
+//   --mat-datepicker-calendar-date-today-selected-state-outline-color: #006a6a;
+//   --mat-datepicker-calendar-date-in-range-state-background-color: #00fbfb;
+//   --mat-datepicker-calendar-date-in-comparison-range-state-background-color: #e0e0ff;
+//   --mat-datepicker-calendar-date-today-outline-color: #006a6a;
+//   --mat-datepicker-calendar-date-preview-state-outline-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-button-base {
+//   --mdc-text-button-label-text-color: #006a6a;
+//   --mdc-protected-button-label-text-color: #006a6a;
+//   --mdc-filled-button-container-color: #006a6a;
+//   --mdc-filled-button-label-text-color: #fffffa;
+//   --mdc-outlined-button-label-text-color: #006a6a;
+//   --mat-text-button-state-layer-color: #006a6a;
+//   --mat-text-button-ripple-color: rgba(0, 106, 106, 0.12);
+//   --mat-protected-button-state-layer-color: #006a6a;
+//   --mat-protected-button-ripple-color: rgba(0, 106, 106, 0.12);
+//   --mat-filled-button-state-layer-color: #fffffa;
+//   --mat-filled-button-ripple-color: rgba(255, 255, 250, 0.12);
+//   --mat-outlined-button-state-layer-color: #006a6a;
+//   --mat-outlined-button-ripple-color: rgba(0, 106, 106, 0.12);
+// }
+// .mat-accent.mat-mdc-standard-chip {
+//   --mdc-chip-elevated-selected-container-color: #00fbfb;
+//   --mdc-chip-selected-hover-state-layer-color: #002020;
+//   --mdc-chip-selected-focus-state-layer-color: #002020;
+//   --mdc-chip-selected-label-text-color: #002020;
+//   --mdc-chip-with-icon-selected-icon-color: #002020;
+//   --mat-chip-selected-trailing-action-state-layer-color: #002020;
+//   --mat-chip-selected-trailing-icon-color: #002020;
+// }
+// .mat-accent .mdc-list-item__start,
+// .mat-accent .mdc-list-item__end {
+//   --mdc-checkbox-selected-checkmark-color: #fffffa;
+//   --mdc-checkbox-selected-focus-icon-color: #006a6a;
+//   --mdc-checkbox-selected-hover-icon-color: #006a6a;
+//   --mdc-checkbox-selected-icon-color: #006a6a;
+//   --mdc-checkbox-selected-focus-state-layer-color: #006a6a;
+//   --mdc-checkbox-selected-hover-state-layer-color: #006a6a;
+//   --mdc-checkbox-unselected-pressed-state-layer-color: #006a6a;
+//   --mat-checkbox-disabled-label-color: rgba(27, 27, 31, 0.38);
+//   --mat-checkbox-label-text-color: #1b1b1f;
+//   --mdc-radio-selected-focus-icon-color: #006a6a;
+//   --mdc-radio-selected-hover-icon-color: #006a6a;
+//   --mdc-radio-selected-icon-color: #006a6a;
+//   --mdc-radio-selected-pressed-icon-color: #006a6a;
+//   --mat-radio-checked-ripple-color: #006a6a;
+// }
+// .mat-accent.mat-mdc-fab,
+// .mat-accent.mat-mdc-mini-fab {
+//   --mdc-extended-fab-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-extended-fab-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-extended-fab-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+//     0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+//   --mdc-extended-fab-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-extended-fab-container-shadow-color: #000002;
+//   --mdc-fab-container-color: #00fbfb;
+//   --mdc-fab-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+//     0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-container-shadow-color: #000002;
+//   --mdc-fab-small-container-color: #00fbfb;
+//   --mdc-fab-small-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-small-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-small-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+//     0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-small-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+//     0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+//   --mdc-fab-small-container-shadow-color: #000002;
+//   --mat-fab-foreground-color: #002020;
+//   --mat-fab-state-layer-color: #002020;
+//   --mat-fab-ripple-color: rgba(0, 32, 32, 0.12);
+//   --mat-fab-small-foreground-color: #002020;
+//   --mat-fab-small-state-layer-color: #002020;
+//   --mat-fab-small-ripple-color: rgba(0, 32, 32, 0.12);
+// }

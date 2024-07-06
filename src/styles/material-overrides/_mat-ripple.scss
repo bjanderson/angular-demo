@@ -22,3 +22,12 @@
 //   transform: scale3d(0, 0, 0);
 //   background-color: var(--mat-ripple-color, rgba(0, 0, 0, 0.1));
 // }
+
+// .cdk-high-contrast-active .mat-ripple-element {
+//   display: none;
+// }
+
+// .cdk-drag-preview .mat-ripple-element,
+// .cdk-drag-placeholder .mat-ripple-element {
+//   display: none;
+// }

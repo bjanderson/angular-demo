@@ -1,5 +1,30 @@
 @import '_colors.scss';
 
+// :root {
+//   --mdc-secondary-navigation-tab-container-height: 44px;
+//   --mdc-tab-indicator-active-indicator-color: #343dff;
+//   --mdc-tab-indicator-active-indicator-height: 2px;
+//   --mdc-tab-indicator-active-indicator-shape: 0;
+//   --mat-tab-header-divider-color: #e4e1ec;
+//   --mat-tab-header-pagination-icon-color: #1b1b1f;
+//   --mat-tab-header-inactive-label-text-color: #1b1b1f;
+//   --mat-tab-header-active-label-text-color: #1b1b1f;
+//   --mat-tab-header-active-ripple-color: #1b1b1f;
+//   --mat-tab-header-inactive-ripple-color: #1b1b1f;
+//   --mat-tab-header-inactive-focus-label-text-color: #1b1b1f;
+//   --mat-tab-header-inactive-hover-label-text-color: #1b1b1f;
+//   --mat-tab-header-active-focus-label-text-color: #1b1b1f;
+//   --mat-tab-header-active-hover-label-text-color: #1b1b1f;
+//   --mat-tab-header-active-focus-indicator-color: #343dff;
+//   --mat-tab-header-active-hover-indicator-color: #343dff;
+//   --mat-tab-header-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+//   --mat-tab-header-label-text-size: 0.875rem;
+//   --mat-tab-header-label-text-tracking: 0.006rem;
+//   --mat-tab-header-label-text-line-height: 1.25rem;
+//   --mat-tab-header-label-text-weight: 700;
+//   --mat-tab-header-divider-height: 1px;
+// }
+
 .mat-mdc-tab-label {
   .mat-mdc-tab-label-content {
     color: $color-ffffff;

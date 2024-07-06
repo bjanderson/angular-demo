@@ -5,6 +5,184 @@
   --mdc-outlined-button-container-shape: 0.5rem;
   --mdc-protected-button-container-shape: 0.5rem;
   --mdc-text-button-container-shape: 0.5rem;
+
+  // --mdc-text-button-label-text-color: #343dff;
+  // --mdc-text-button-disabled-label-text-color: rgba(27, 27, 31, 0.38);
+  // --mdc-text-button-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mdc-text-button-label-text-size: 0.875rem;
+  // --mdc-text-button-label-text-tracking: 0.006rem;
+  // --mdc-text-button-label-text-weight: 700;
+  // --mdc-text-button-container-height: 36px;
+  // --mdc-text-button-container-shape: 9999px;
+  // --mdc-protected-button-container-color: #fffbfd;
+  // --mdc-protected-button-label-text-color: #343dff;
+  // --mdc-protected-button-disabled-container-color: rgba(27, 27, 31, 0.12);
+  // --mdc-protected-button-disabled-label-text-color: rgba(27, 27, 31, 0.38);
+  // --mdc-protected-button-container-elevation-shadow: 0px 2px 1px -1px rgba(0, 0, 2, 0.2),
+  //   0px 1px 1px 0px rgba(0, 0, 2, 0.14), 0px 1px 3px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-protected-button-disabled-container-elevation-shadow: 0px 0px 0px 0px rgba(0, 0, 2, 0.2),
+  //   0px 0px 0px 0px rgba(0, 0, 2, 0.14), 0px 0px 0px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-protected-button-focus-container-elevation-shadow: 0px 2px 1px -1px rgba(0, 0, 2, 0.2),
+  //   0px 1px 1px 0px rgba(0, 0, 2, 0.14), 0px 1px 3px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-protected-button-hover-container-elevation-shadow: 0px 3px 3px -2px rgba(0, 0, 2, 0.2),
+  //   0px 3px 4px 0px rgba(0, 0, 2, 0.14), 0px 1px 8px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-protected-button-pressed-container-elevation-shadow: 0px 2px 1px -1px rgba(0, 0, 2, 0.2),
+  //   0px 1px 1px 0px rgba(0, 0, 2, 0.14), 0px 1px 3px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-protected-button-container-shadow-color: #000002;
+  // --mdc-protected-button-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mdc-protected-button-label-text-size: 0.875rem;
+  // --mdc-protected-button-label-text-tracking: 0.006rem;
+  // --mdc-protected-button-label-text-weight: 700;
+  // --mdc-protected-button-container-height: 36px;
+  // --mdc-protected-button-container-shape: 9999px;
+  // --mdc-filled-button-container-color: #343dff;
+  // --mdc-filled-button-label-text-color: #ffffff;
+  // --mdc-filled-button-disabled-container-color: rgba(27, 27, 31, 0.12);
+  // --mdc-filled-button-disabled-label-text-color: rgba(27, 27, 31, 0.38);
+  // --mdc-filled-button-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mdc-filled-button-label-text-size: 0.875rem;
+  // --mdc-filled-button-label-text-tracking: 0.006rem;
+  // --mdc-filled-button-label-text-weight: 700;
+  // --mdc-filled-button-container-height: 36px;
+  // --mdc-filled-button-container-shape: 9999px;
+  // --mdc-outlined-button-disabled-outline-color: rgba(27, 27, 31, 0.12);
+  // --mdc-outlined-button-disabled-label-text-color: rgba(27, 27, 31, 0.38);
+  // --mdc-outlined-button-label-text-color: #343dff;
+  // --mdc-outlined-button-outline-color: #777680;
+  // --mdc-outlined-button-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mdc-outlined-button-label-text-size: 0.875rem;
+  // --mdc-outlined-button-label-text-tracking: 0.006rem;
+  // --mdc-outlined-button-label-text-weight: 700;
+  // --mdc-outlined-button-container-height: 36px;
+  // --mdc-outlined-button-outline-width: 1px;
+  // --mdc-outlined-button-container-shape: 9999px;
+  // --mat-text-button-state-layer-color: #343dff;
+  // --mat-text-button-disabled-state-layer-color: #46464f;
+  // --mat-text-button-ripple-color: rgba(52, 61, 255, 0.12);
+  // --mat-text-button-hover-state-layer-opacity: 0.08;
+  // --mat-text-button-focus-state-layer-opacity: 0.12;
+  // --mat-text-button-pressed-state-layer-opacity: 0.12;
+  // --mat-text-button-touch-target-display: block;
+  // --mat-text-button-horizontal-padding: 12px;
+  // --mat-text-button-with-icon-horizontal-padding: 16px;
+  // --mat-text-button-icon-spacing: 8px;
+  // --mat-text-button-icon-offset: -4px;
+  // --mat-protected-button-state-layer-color: #343dff;
+  // --mat-protected-button-disabled-state-layer-color: #46464f;
+  // --mat-protected-button-ripple-color: rgba(52, 61, 255, 0.12);
+  // --mat-protected-button-hover-state-layer-opacity: 0.08;
+  // --mat-protected-button-focus-state-layer-opacity: 0.12;
+  // --mat-protected-button-pressed-state-layer-opacity: 0.12;
+  // --mat-protected-button-touch-target-display: block;
+  // --mat-protected-button-horizontal-padding: 24px;
+  // --mat-protected-button-icon-spacing: 8px;
+  // --mat-protected-button-icon-offset: -8px;
+  // --mat-filled-button-state-layer-color: #ffffff;
+  // --mat-filled-button-disabled-state-layer-color: #46464f;
+  // --mat-filled-button-ripple-color: rgba(255, 255, 255, 0.12);
+  // --mat-filled-button-hover-state-layer-opacity: 0.08;
+  // --mat-filled-button-focus-state-layer-opacity: 0.12;
+  // --mat-filled-button-pressed-state-layer-opacity: 0.12;
+  // --mat-filled-button-touch-target-display: block;
+  // --mat-filled-button-horizontal-padding: 24px;
+  // --mat-filled-button-icon-spacing: 8px;
+  // --mat-filled-button-icon-offset: -8px;
+  // --mat-outlined-button-state-layer-color: #343dff;
+  // --mat-outlined-button-disabled-state-layer-color: #46464f;
+  // --mat-outlined-button-ripple-color: rgba(52, 61, 255, 0.12);
+  // --mat-outlined-button-hover-state-layer-opacity: 0.08;
+  // --mat-outlined-button-focus-state-layer-opacity: 0.12;
+  // --mat-outlined-button-pressed-state-layer-opacity: 0.12;
+  // --mat-outlined-button-touch-target-display: block;
+  // --mat-outlined-button-horizontal-padding: 24px;
+  // --mat-outlined-button-icon-spacing: 8px;
+  // --mat-outlined-button-icon-offset: -8px;
+  // --mdc-icon-button-icon-color: #46464f;
+  // --mdc-icon-button-disabled-icon-color: rgba(27, 27, 31, 0.38);
+  // --mdc-icon-button-state-layer-size: 36px;
+  // --mdc-icon-button-icon-size: 24px;
+  // --mat-icon-button-state-layer-color: #46464f;
+  // --mat-icon-button-disabled-state-layer-color: #46464f;
+  // --mat-icon-button-ripple-color: rgba(70, 70, 79, 0.12);
+  // --mat-icon-button-hover-state-layer-opacity: 0.08;
+  // --mat-icon-button-focus-state-layer-opacity: 0.12;
+  // --mat-icon-button-pressed-state-layer-opacity: 0.12;
+  // --mat-icon-button-touch-target-display: block;
+  // --mdc-extended-fab-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-extended-fab-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-extended-fab-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+  //   0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+  // --mdc-extended-fab-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-extended-fab-container-shadow-color: #000002;
+  // --mdc-extended-fab-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mdc-extended-fab-label-text-size: 0.875rem;
+  // --mdc-extended-fab-label-text-tracking: 0.006rem;
+  // --mdc-extended-fab-label-text-weight: 700;
+  // --mdc-extended-fab-container-height: 56px;
+  // --mdc-extended-fab-container-shape: 16px;
+  // --mdc-fab-container-color: #e0e0ff;
+  // --mdc-fab-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+  //   0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-container-shadow-color: #000002;
+  // --mdc-fab-container-shape: 16px;
+  // --mdc-fab-icon-size: 24px;
+  // --mdc-fab-small-container-color: #e0e0ff;
+  // --mdc-fab-small-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-small-focus-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-small-hover-container-elevation-shadow: 0px 5px 5px -3px rgba(0, 0, 2, 0.2),
+  //   0px 8px 10px 1px rgba(0, 0, 2, 0.14), 0px 3px 14px 2px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-small-pressed-container-elevation-shadow: 0px 3px 5px -1px rgba(0, 0, 2, 0.2),
+  //   0px 6px 10px 0px rgba(0, 0, 2, 0.14), 0px 1px 18px 0px rgba(0, 0, 2, 0.12);
+  // --mdc-fab-small-container-shadow-color: #000002;
+  // --mdc-fab-small-container-shape: 12px;
+  // --mdc-fab-small-icon-size: 24px;
+  // --mat-fab-foreground-color: #00006e;
+  // --mat-fab-state-layer-color: #00006e;
+  // --mat-fab-ripple-color: rgba(0, 0, 110, 0.12);
+  // --mat-fab-hover-state-layer-opacity: 0.08;
+  // --mat-fab-focus-state-layer-opacity: 0.12;
+  // --mat-fab-pressed-state-layer-opacity: 0.12;
+  // --mat-fab-disabled-state-container-color: rgba(27, 27, 31, 0.12);
+  // --mat-fab-disabled-state-foreground-color: rgba(27, 27, 31, 0.38);
+  // --mat-fab-touch-target-display: block;
+  // --mat-fab-small-foreground-color: #00006e;
+  // --mat-fab-small-state-layer-color: #00006e;
+  // --mat-fab-small-ripple-color: rgba(0, 0, 110, 0.12);
+  // --mat-fab-small-hover-state-layer-opacity: 0.08;
+  // --mat-fab-small-focus-state-layer-opacity: 0.12;
+  // --mat-fab-small-pressed-state-layer-opacity: 0.12;
+  // --mat-fab-small-disabled-state-container-color: rgba(27, 27, 31, 0.12);
+  // --mat-fab-small-disabled-state-foreground-color: rgba(27, 27, 31, 0.38);
+  // --mat-standard-button-toggle-hover-state-layer-opacity: 0.08;
+  // --mat-standard-button-toggle-focus-state-layer-opacity: 0.12;
+  // --mat-standard-button-toggle-text-color: #1b1b1f;
+  // --mat-standard-button-toggle-state-layer-color: #1b1b1f;
+  // --mat-standard-button-toggle-selected-state-background-color: #e1e0f9;
+  // --mat-standard-button-toggle-selected-state-text-color: #191a2c;
+  // --mat-standard-button-toggle-disabled-state-text-color: rgba(27, 27, 31, 0.38);
+  // --mat-standard-button-toggle-disabled-selected-state-text-color: rgba(27, 27, 31, 0.38);
+  // --mat-standard-button-toggle-disabled-selected-state-background-color: rgba(27, 27, 31, 0.12);
+  // --mat-standard-button-toggle-divider-color: #777680;
+  // --mat-standard-button-toggle-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+  // --mat-standard-button-toggle-label-text-line-height: 1.25rem;
+  // --mat-standard-button-toggle-label-text-size: 0.875rem;
+  // --mat-standard-button-toggle-label-text-tracking: 0.006rem;
+  // --mat-standard-button-toggle-label-text-weight: 700;
+  // --mat-standard-button-toggle-height: 40px;
+  // --mat-standard-button-toggle-shape: 9999px;
+  // --mat-standard-button-toggle-background-color: transparent;
+  // --mat-standard-button-toggle-disabled-state-background-color: transparent;
 }
 
 button[mat-icon-button].mat-mdc-icon-button {

@@ -1,5 +1,45 @@
 @import '_colors.scss';
 
+// :root {
+// --mat-paginator-container-text-color: #1b1b1f;
+// --mat-paginator-container-background-color: #fffbfd;
+// --mat-paginator-enabled-icon-color: #46464f;
+// --mat-paginator-disabled-icon-color: rgba(27, 27, 31, 0.38);
+// --mat-paginator-container-text-font: Arial, Verdana, Tahoma, sans-serif;
+// --mat-paginator-container-text-line-height: 1rem;
+// --mat-paginator-container-text-size: 0.75rem;
+// --mat-paginator-container-text-tracking: 0.025rem;
+// --mat-paginator-container-text-weight: 400;
+// --mat-paginator-select-trigger-text-size: 0.75rem;
+// --mat-paginator-container-size: 52px;
+// --mat-paginator-form-field-container-height: 40px;
+// --mat-paginator-form-field-container-vertical-padding: 8px;
+// --mat-table-background-color: #fffbfd;
+// --mat-table-header-headline-color: #1b1b1f;
+// --mat-table-row-item-label-text-color: #1b1b1f;
+// --mat-table-row-item-outline-color: #c7c5d0;
+// --mat-table-header-headline-font: Arial, Verdana, Tahoma, sans-serif;
+// --mat-table-header-headline-line-height: 1.25rem;
+// --mat-table-header-headline-size: 0.875rem;
+// --mat-table-header-headline-weight: 700;
+// --mat-table-header-headline-tracking: 0.006rem;
+// --mat-table-row-item-label-text-font: Arial, Verdana, Tahoma, sans-serif;
+// --mat-table-row-item-label-text-line-height: 1.25rem;
+// --mat-table-row-item-label-text-size: 0.875rem;
+// --mat-table-row-item-label-text-weight: 400;
+// --mat-table-row-item-label-text-tracking: 0.016rem;
+// --mat-table-footer-supporting-text-font: Arial, Verdana, Tahoma, sans-serif;
+// --mat-table-footer-supporting-text-line-height: 1.25rem;
+// --mat-table-footer-supporting-text-size: 0.875rem;
+// --mat-table-footer-supporting-text-weight: 400;
+// --mat-table-footer-supporting-text-tracking: 0.016rem;
+// --mat-table-header-container-height: 52px;
+// --mat-table-footer-container-height: 48px;
+// --mat-table-row-item-container-height: 48px;
+// --mat-table-row-item-outline-width: 1px;
+//   --mat-sort-arrow-color: #1b1b1f;
+// }
+
 .mat-mdc-sort-header-content {
   text-transform: capitalize;
 }
