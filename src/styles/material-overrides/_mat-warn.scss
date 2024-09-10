@@ -1,3 +1,9 @@
+@import '_colors.scss';
+
+.on-warn {
+  --mat-icon-color: $color-ffffff;
+}
+
 // .mat-warn {
 //   --mat-option-selected-state-label-text-color: #410002;
 //   --mat-option-selected-state-layer-color: #ffdad6;

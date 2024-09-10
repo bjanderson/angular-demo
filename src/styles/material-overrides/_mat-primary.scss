@@ -1,3 +1,9 @@
+@import '_colors.scss';
+
+.on-primary {
+  --mat-icon-color: $color-ffffff;
+}
+
 // .mat-primary {
 //   --mat-stepper-header-selected-state-icon-background-color: #343dff;
 //   --mat-stepper-header-selected-state-icon-foreground-color: #ffffff;

@@ -1,3 +1,9 @@
+@import '_colors.scss';
+
+.on-accent {
+  --mat-icon-color: $color-ffffff;
+}
+
 // .mat-accent {
 //   --mat-option-selected-state-label-text-color: #002020;
 //   --mat-option-selected-state-layer-color: #00fbfb;

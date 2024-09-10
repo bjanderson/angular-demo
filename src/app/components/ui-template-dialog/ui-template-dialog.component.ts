@@ -28,7 +28,7 @@ export class UiTemplateDialogComponent {
     dialogConfig.disableClose = true;
     dialogConfig.hasBackdrop = true;
     dialogConfig.panelClass = 'standard-dialog';
-    dialogConfig.width = '60%';
+    dialogConfig.width = '90%';
     dialogConfig.data = { parent: this };
 
     this.dialogRef = this.dialog.open(UiTemplateDialogBodyComponent, dialogConfig);

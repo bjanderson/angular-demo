@@ -1,3 +1,14 @@
+:root {
+  --mat-dialog-container-max-width: 100%;
+  --mat-dialog-container-small-max-width: 100%;
+  --mdc-dialog-container-shape: 0.5rem;
+}
+
+// use <mat-dialog-actions [align]="end">
+// .mat-mdc-dialog-actions {
+//   justify-content: flex-end;
+// }
+
 // :root {
 //   --mdc-dialog-container-color: #fffbfd;
 //   --mdc-dialog-subhead-color: #1b1b1f;
@@ -23,7 +34,3 @@
 //   --mat-dialog-with-actions-content-padding: 20px 24px 0;
 //   --mat-dialog-headline-padding: 6px 24px 13px;
 // }
-
-.mat-mdc-dialog-actions {
-  justify-content: flex-end;
-}

@@ -1,12 +1,12 @@
 import { WritableSignal, signal } from '@angular/core';
-import { ICSVModel } from '@bjanderson/app-name-shared';
 import { ErrorResponse, getArrayOfModels } from '@bjanderson/utils';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map, take } from 'rxjs/operators';
+import { IHasId } from '../../interfaces';
 import { AlertService } from '../alert';
 import { ApiService } from '../api';
 
-export abstract class CrudService<T extends ICSVModel> {
+export abstract class CrudService<T extends IHasId> {
   models: WritableSignal<T[]>;
 
   constructor(

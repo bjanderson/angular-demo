@@ -10,6 +10,7 @@
     "sass": "sass --load-path ./node_modules --load-path ./src/styles --load-path ./ --no-source-map",
     "sass:material": "npm run sass src/material.scss ./tmp/material.css",
     "sass:styles": "npm run sass src/styles.scss ./tmp/styles.css",
+    "sass:color-mixin": "npm run sass src/styles/_color-mixin.scss ./tmp/color-mixin.css",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
