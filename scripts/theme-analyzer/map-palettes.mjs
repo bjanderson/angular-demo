@@ -127,18 +127,20 @@ export function getUsedPaletteLevels() {
     }
   });
 
-  const paletteMap = {};
   const keys = Object.keys(tmp);
   keys.sort();
-  keys.forEach((k) => {
-    paletteMap[k] = tmp[k];
-  });
+
+  // const paletteMap = {};
+  // keys.forEach((k) => {
+  //   paletteMap[k] = tmp[k];
+  // });
+  // console.log('paletteMap :>> ', paletteMap);
 
   const usedPaletteLevels = {};
   keys.forEach((k) => {
     const palette = k.split('.')[0];
     const group = k.split('.')[1];
-    const level = k.split('.')[2];
+    const level = parseInt(k.split('.')[2], 10);
     if (usedPaletteLevels[palette] == null) {
       usedPaletteLevels[palette] = {};
     }
@@ -147,7 +149,7 @@ export function getUsedPaletteLevels() {
       usedPaletteLevels[palette][group] = [];
     }
 
-    usedPaletteLevels[palette][group].push(parseInt(level, 10));
+    usedPaletteLevels[palette][group].push(level);
     usedPaletteLevels[palette][group].sort((a, b) => a - b);
   });
 
