@@ -1,4 +1,4 @@
-import { getPath, readFile, writeFile } from './file-io.mjs';
+import { getPath, readFile, writeFile } from '../file-io.mjs';
 
 /**
  * README
