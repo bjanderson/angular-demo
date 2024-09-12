@@ -1,23 +1,14 @@
-import { readFile } from '../file-io.mjs';
+import { readFile, writeFile } from '../file-io.mjs';
 import { getMaterialColors } from './read-material-colors.mjs';
 
-// export function mapPalettes() {
-//   mapMyPrimaryPalette();
-//   mapMyTertiaryPalette();
-//   mapPrimaryPalette();
-//   mapPrimaryMagentaPalette();
-//   mapTertiaryPalette();
-//   mapTertiaryMagentaPalette();
-// }
+export const groups = ['primary', 'secondary', 'neutral', 'neutralVariant', 'error'];
 
-const groups = ['primary', 'secondary', 'neutral', 'neutralVariant', 'error'];
-
-function mapMyPrimaryPalette() {
+export function mapMyPrimaryPalette() {
   const fileName = 'src/styles/material-theme/palettes/_my-primary-palette.scss';
   return mapPalette(fileName, 'myPrimary');
 }
 
-function mapMyTertiaryPalette() {
+export function mapMyTertiaryPalette() {
   const fileName = 'src/styles/material-theme/palettes/_my-tertiary-palette.scss';
   return mapPalette(fileName, 'myTertiary');
 }
@@ -115,7 +106,22 @@ function getCssMap() {
   return cssMap;
 }
 
-export function getUsedPaletteLevels() {
+export function getColorPaletteLevels() {
+  const cssMap = getCssMap();
+
+  const tmp = {};
+  Object.keys(cssMap).forEach((key) => {
+    if (tmp[cssMap[key]] == null) {
+      tmp[cssMap[key]] = [key];
+    } else {
+      tmp[cssMap[key]].push(key);
+    }
+  });
+
+  return tmp;
+}
+
+function getUsedPaletteLevels() {
   const cssMap = getCssMap();
 
   const tmp = {};
@@ -130,17 +136,11 @@ export function getUsedPaletteLevels() {
   const keys = Object.keys(tmp);
   keys.sort();
 
-  // const paletteMap = {};
-  // keys.forEach((k) => {
-  //   paletteMap[k] = tmp[k];
-  // });
-  // console.log('paletteMap :>> ', paletteMap);
-
   const usedPaletteLevels = {};
   keys.forEach((k) => {
     const palette = k.split('.')[0];
     const group = k.split('.')[1];
-    const level = parseInt(k.split('.')[2], 10);
+    const level = k.split('.')[2];
     if (usedPaletteLevels[palette] == null) {
       usedPaletteLevels[palette] = {};
     }
@@ -150,8 +150,86 @@ export function getUsedPaletteLevels() {
     }
 
     usedPaletteLevels[palette][group].push(level);
-    usedPaletteLevels[palette][group].sort((a, b) => a - b);
+    usedPaletteLevels[palette][group].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
   });
 
+  return usedPaletteLevels;
+}
+
+function createPrimaryPalette(usedPaletteLevels) {
+  const primaryPalette = mapPrimaryPalette();
+  const magentaPalette = mapPrimaryMagentaPalette();
+  mapPalettes(usedPaletteLevels, primaryPalette, magentaPalette, 'primary');
+
+  const scss = getScss('my-primary-palette', magentaPalette);
+
+  const fileName = 'src/styles/material-theme/palettes/_my-primary-palette.scss';
+  writeFile(fileName, scss, true);
+}
+
+function createTertiaryPalette(usedPaletteLevels) {
+  const tertiaryPalette = mapTertiaryPalette();
+  const magentaPalette = mapTertiaryMagentaPalette();
+  mapPalettes(usedPaletteLevels, tertiaryPalette, magentaPalette, 'tertiary');
+
+  const scss = getScss('my-tertiary-palette', magentaPalette);
+
+  const fileName = 'src/styles/material-theme/palettes/_my-tertiary-palette.scss';
+  writeFile(fileName, scss, true);
+}
+
+function mapPalettes(usedPaletteLevels, fromPalette, toPalette, paletteName) {
+  groups.forEach((group) => {
+    usedPaletteLevels[paletteName][group]?.forEach((level) => {
+      toPalette.colors.splice(
+        toPalette.colors.indexOf(toPalette[group][level]),
+        1,
+        fromPalette[group][level],
+      );
+
+      toPalette[group][level] = fromPalette[group][level];
+    });
+  });
+}
+
+function getScss(name, palette) {
+  let scss = `$${name}: (\n`;
+  Object.keys(palette.primary).forEach((key) => {
+    scss += `  ${key}: ${palette.primary[key]}, \n`;
+  });
+
+  scss += `  secondary: (\n`;
+  Object.keys(palette.secondary).forEach((key) => {
+    scss += `    ${key}: ${palette.secondary[key]}, \n`;
+  });
+
+  scss += `  ),\n`;
+  scss += `  neutral: (\n`;
+  Object.keys(palette.neutral).forEach((key) => {
+    scss += `    ${key}: ${palette.neutral[key]}, \n`;
+  });
+
+  scss += `  ),\n`;
+  scss += `  neutral-variant: (\n`;
+  Object.keys(palette.neutralVariant).forEach((key) => {
+    scss += `    ${key}: ${palette.neutralVariant[key]}, \n`;
+  });
+
+  scss += `  ),\n`;
+  scss += `  error: (\n`;
+  Object.keys(palette.error).forEach((key) => {
+    scss += `    ${key}: ${palette.error[key]}, \n`;
+  });
+
+  scss += `  ),\n`;
+  scss += `);\n`;
+  return scss;
+}
+
+export function createMyPalettes() {
+  const usedPaletteLevels = getUsedPaletteLevels();
   console.log('usedPaletteLevels :>> ', usedPaletteLevels);
+
+  createPrimaryPalette(usedPaletteLevels);
+  createTertiaryPalette(usedPaletteLevels);
 }

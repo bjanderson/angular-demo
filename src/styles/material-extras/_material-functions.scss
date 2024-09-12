@@ -1,0 +1,14 @@
+// from: https://angular-material.dev/articles/updating-to-angular-material-18#adding-support-for-material-3-m3https://angular-material.dev/articles/angular-material-18-typography
+
+@use 'sass:map';
+
+@function get-contrast-color-from-palette($palette, $hue) {
+  @return map.get(map.get($palette, contrast), $hue);
+}
+
+@function get-color-from-palette($palette, $hue) {
+  @if map.has-key($palette, $hue) {
+    @return map.get($palette, $hue);
+  }
+  @error 'Hue "' + $hue + '" does not exist in palette. Available hues are: ' + map.keys($palette);
+}

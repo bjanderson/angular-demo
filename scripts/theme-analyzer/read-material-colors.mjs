@@ -13,19 +13,14 @@ export function getMaterialColors() {
     .map(rgbaToHex)
     .filter((v, i, a) => v != null && a.indexOf(v) === i)
     .sort();
-  // .join('\n')
-  // .split('\n')
-  // .filter((v, i, a) => a.indexOf(v) === i)
-  // .sort();
-  console.log('rgbaColors :>> ', rgbaColors);
+
   const hexColors = Array.from(materialCss.matchAll(hexRe))
     .join('\n')
     .split('\n')
     .filter((v, i, a) => v != null && a.indexOf(v) === i)
     .sort();
-  console.log('hexColors :>> ', hexColors);
+
   const colors = [...rgbaColors, ...hexColors].sort();
-  console.log('colors :>> ', colors);
   return colors;
 }
 
