@@ -1,9 +1,7 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-
+@import 'material-extras/_material-color-mixin.scss';
 @import 'material-theme/_ui-theme.scss';
-
-@import '_color-mixin.scss';
 
 // @debug $ui-theme;
 
@@ -14,7 +12,6 @@
 :root {
   @include mat.all-component-themes($ui-theme);
 
-  // color-mixin
-
+  // _material-color-mixin.scss
   @include mat-component-variants($ui-theme);
 }

@@ -3,14 +3,14 @@ import { getMaterialColors } from './read-material-colors.mjs';
 
 export const groups = ['primary', 'secondary', 'neutral', 'neutralVariant', 'error'];
 
-export function mapMyPrimaryPalette() {
-  const fileName = 'src/styles/material-theme/palettes/_my-primary-palette.scss';
-  return mapPalette(fileName, 'myPrimary');
+export function mapAppPrimaryPalette() {
+  const fileName = 'src/styles/material-theme/palettes/_app-primary-palette.scss';
+  return mapPalette(fileName, 'appPrimary');
 }
 
-export function mapMyTertiaryPalette() {
-  const fileName = 'src/styles/material-theme/palettes/_my-tertiary-palette.scss';
-  return mapPalette(fileName, 'myTertiary');
+export function mapAppTertiaryPalette() {
+  const fileName = 'src/styles/material-theme/palettes/_app-tertiary-palette.scss';
+  return mapPalette(fileName, 'appTertiary');
 }
 
 function mapPrimaryPalette() {
@@ -72,8 +72,8 @@ function getCssMap() {
   const materialColors = getMaterialColors();
 
   const palettes = [
-    // mapMyPrimaryPalette(),
-    // mapMyTertiaryPalette(),
+    // mapAppPrimaryPalette(),
+    // mapAppTertiaryPalette(),
     mapPrimaryPalette(),
     mapTertiaryPalette(),
     mapPrimaryMagentaPalette(),
@@ -161,9 +161,9 @@ function createPrimaryPalette(usedPaletteLevels) {
   const magentaPalette = mapPrimaryMagentaPalette();
   mapPalettes(usedPaletteLevels, primaryPalette, magentaPalette, 'primary');
 
-  const scss = getScss('my-primary-palette', magentaPalette);
+  const scss = getScss('app-primary-palette', magentaPalette);
 
-  const fileName = 'src/styles/material-theme/palettes/_my-primary-palette.scss';
+  const fileName = 'src/styles/material-theme/palettes/_app-primary-palette.scss';
   writeFile(fileName, scss, true);
 }
 
@@ -172,9 +172,9 @@ function createTertiaryPalette(usedPaletteLevels) {
   const magentaPalette = mapTertiaryMagentaPalette();
   mapPalettes(usedPaletteLevels, tertiaryPalette, magentaPalette, 'tertiary');
 
-  const scss = getScss('my-tertiary-palette', magentaPalette);
+  const scss = getScss('app-tertiary-palette', magentaPalette);
 
-  const fileName = 'src/styles/material-theme/palettes/_my-tertiary-palette.scss';
+  const fileName = 'src/styles/material-theme/palettes/_app-tertiary-palette.scss';
   writeFile(fileName, scss, true);
 }
 

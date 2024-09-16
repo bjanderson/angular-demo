@@ -2,8 +2,8 @@ import { readFile, writeFile } from '../file-io.mjs';
 import {
   getColorPaletteLevels,
   groups,
-  mapMyPrimaryPalette,
-  mapMyTertiaryPalette,
+  mapAppPrimaryPalette,
+  mapAppTertiaryPalette,
 } from './map-palettes.mjs';
 
 const componentFileName =
@@ -24,27 +24,27 @@ export function generateHtml() {
 function generateMaterialHtml() {
   let html = `<!-- StartMaterialThemeColors -->\n
   <div class="row flex-wrap">\n`;
-  const myPrimaryPalette = mapMyPrimaryPalette();
-  console.log('myPrimaryPalette :>> ', myPrimaryPalette);
+  const appPrimaryPalette = mapAppPrimaryPalette();
+  console.log('appPrimaryPalette :>> ', appPrimaryPalette);
   groups.forEach((group) => {
     html += `<div class="col mrl0-5">`;
     html += `<h3>${group}</h3>`;
-    const levels = Object.keys(myPrimaryPalette[group]);
+    const levels = Object.keys(appPrimaryPalette[group]);
     levels.forEach((level) => {
-      html += `<div class="row color" style="background: ${myPrimaryPalette[group][level]}">
-      <span style="background: #ffffff66">${level}: ${myPrimaryPalette[group][level]}</span>
+      html += `<div class="row color" style="background: ${appPrimaryPalette[group][level]}">
+      <span style="background: #ffffff66">${level}: ${appPrimaryPalette[group][level]}</span>
     </div>`;
     });
     html += `</div>`;
   });
 
-  const myTertiaryPalette = mapMyTertiaryPalette();
+  const appTertiaryPalette = mapAppTertiaryPalette();
   html += `<div class="col mrl0-5">\n`;
   html += `<h3>tertiary</h3>`;
-  const levels = Object.keys(myTertiaryPalette.primary);
+  const levels = Object.keys(appTertiaryPalette.primary);
   levels.forEach((level) => {
-    html += `<div class="row color" style="background: ${myTertiaryPalette.primary[level]}">
-      <span style="background: #ffffff66">${level}: ${myTertiaryPalette.primary[level]}</span>
+    html += `<div class="row color" style="background: ${appTertiaryPalette.primary[level]}">
+      <span style="background: #ffffff66">${level}: ${appTertiaryPalette.primary[level]}</span>
     </div>`;
   });
   html += `</div>`;

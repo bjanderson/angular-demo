@@ -8,8 +8,8 @@ function setBaseColorPalettes() {
   uiTheme = uiTheme
     .replace('// $primary: $primary', '$primary: $primary')
     .replace('// $tertiary: $tertiary', '$tertiary: $tertiary')
-    .replace('$primary: $my-primary', '// $primary: $my-primary')
-    .replace('$tertiary: $my-tertiary', '// $tertiary: $my-tertiary');
+    .replace('$primary: $app-primary', '// $primary: $app-primary')
+    .replace('$tertiary: $app-tertiary', '// $tertiary: $app-tertiary');
   writeFile(fileName, uiTheme, true);
 }
 
@@ -20,8 +20,8 @@ function setMyColorPalettes() {
   uiTheme = uiTheme
     .replace('$primary: $primary', '// $primary: $primary')
     .replace('$tertiary: $tertiary', '// $tertiary: $tertiary')
-    .replace('// $primary: $my-primary', '$primary: $my-primary')
-    .replace('// $tertiary: $my-tertiary', '$tertiary: $my-tertiary');
+    .replace('// $primary: $app-primary', '$primary: $app-primary')
+    .replace('// $tertiary: $app-tertiary', '$tertiary: $app-tertiary');
   writeFile(fileName, uiTheme, true);
 }
 

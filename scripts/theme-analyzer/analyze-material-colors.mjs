@@ -19,25 +19,25 @@ const tertiaryColors = {};
   const themeColors = getThemeColors();
   const usedColors = getUsedColors(allPaletteColors, themeColors);
 
-  const myPrimaryPalette = mapMyPrimaryPalette(usedColors);
-  const myPrimaryPalettePath = getPath([
+  const appPrimaryPalette = mapAppPrimaryPalette(usedColors);
+  const appPrimaryPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_my-primary-palette.scss',
+    '_app-primary-palette.scss',
   ]);
-  writeFile(myPrimaryPalettePath, myPrimaryPalette, true);
+  writeFile(appPrimaryPalettePath, appPrimaryPalette, true);
 
-  const myTertiaryPalette = mapMyTertiaryPalette(usedColors);
-  const myTertiaryPalettePath = getPath([
+  const appTertiaryPalette = mapAppTertiaryPalette(usedColors);
+  const appTertiaryPalettePath = getPath([
     'src',
     'styles',
     'material-theme',
     'palettes',
-    '_my-tertiary-palette.scss',
+    '_app-tertiary-palette.scss',
   ]);
-  writeFile(myTertiaryPalettePath, myTertiaryPalette, true);
+  writeFile(appTertiaryPalettePath, appTertiaryPalette, true);
 
   createHTML(themeColors);
 
@@ -195,12 +195,12 @@ function getTertiaryPalette() {
   return tertiaryPalette;
 }
 
-function mapMyPrimaryPalette(usedColors) {
+function mapAppPrimaryPalette(usedColors) {
   const primaryMagentaLines = getPrimaryMagentaPalette().split('\n');
   const primaryLines = getPrimaryPalette().split('\n');
   let paletteId = 'primary';
 
-  const myPrimaryPaletteLines = ['$my-primary-palette: ('];
+  const appPrimaryPaletteLines = ['$app-primary-palette: ('];
 
   primaryLines.forEach((p, i) => {
     const id = p.trim().split(':')[0];
@@ -210,25 +210,25 @@ function mapMyPrimaryPalette(usedColors) {
 
     if (i > 0) {
       if (hexFilter(p, usedColors)) {
-        myPrimaryPaletteLines.push(p);
+        appPrimaryPaletteLines.push(p);
         const level = p.trim().split(':')[0];
         const val = p.split(':')[1]?.trim();
         if (val?.match(hexRe)) primaryColors[`${paletteId}-${level}`] = val;
       } else {
-        myPrimaryPaletteLines.push(primaryMagentaLines[i]);
+        appPrimaryPaletteLines.push(primaryMagentaLines[i]);
       }
     }
   });
 
-  return myPrimaryPaletteLines.join('\n');
+  return appPrimaryPaletteLines.join('\n');
 }
 
-function mapMyTertiaryPalette(usedColors) {
+function mapAppTertiaryPalette(usedColors) {
   const tertiaryMagentaLines = getTertiaryMagentaPalette().split('\n');
   const tertiaryLines = getTertiaryPalette().split('\n');
   let paletteId = 'primary';
 
-  const myTertiaryPaletteLines = ['$my-tertiary-palette: ('];
+  const appTertiaryPaletteLines = ['$app-tertiary-palette: ('];
 
   tertiaryLines.forEach((t, i) => {
     const id = t.trim().split(':')[0];
@@ -237,17 +237,17 @@ function mapMyTertiaryPalette(usedColors) {
     }
     if (i > 0) {
       if (hexFilter(t, usedColors)) {
-        myTertiaryPaletteLines.push(t);
+        appTertiaryPaletteLines.push(t);
         const level = t.trim().split(':')[0];
         const val = t.split(':')[1]?.trim();
         if (val?.match(hexRe)) tertiaryColors[`${paletteId}-${level}`] = val;
       } else {
-        myTertiaryPaletteLines.push(tertiaryMagentaLines[i]);
+        appTertiaryPaletteLines.push(tertiaryMagentaLines[i]);
       }
     }
   });
 
-  return myTertiaryPaletteLines.join('\n');
+  return appTertiaryPaletteLines.join('\n');
 }
 
 function hexFilter(text, usedColors) {
