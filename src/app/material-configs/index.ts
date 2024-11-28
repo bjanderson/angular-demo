@@ -14,7 +14,7 @@ import { matPaginatorConfigProvider } from './mat-paginator.config';
 import { matProgressBarConfigProvider } from './mat-progress-bar.config';
 import { matProgressSpinnerConfigProvider } from './mat-progress-spinner.config';
 import { matSlideToggleConfigProvider } from './mat-slide-toggle.config';
-import { matSnackBarConfigProvider } from './mat-snack-bar.config copy';
+import { matSnackBarConfigProvider } from './mat-snack-bar.config';
 import { matSortConfigProvider } from './mat-sort.config';
 
 export function provideMaterialConfigs() {
