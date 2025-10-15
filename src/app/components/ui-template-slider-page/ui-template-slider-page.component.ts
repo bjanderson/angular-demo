@@ -3,7 +3,6 @@ import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'ui-ui-template-slider-page',
-  standalone: true,
   styleUrl: './ui-template-slider-page.component.scss',
   templateUrl: './ui-template-slider-page.component.html',
   imports: [MatSliderModule],

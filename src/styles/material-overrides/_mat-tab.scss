@@ -1,5 +1,3 @@
-@import '_colors.scss';
-
 // :root {
 //   --mdc-secondary-navigation-tab-container-height: 44px;
 //   --mdc-tab-indicator-active-indicator-color: #343dff;
@@ -27,6 +25,6 @@
 
 .mat-mdc-tab-label {
   .mat-mdc-tab-label-content {
-    color: $color-ffffff;
+    color: #ffffff;
   }
 }

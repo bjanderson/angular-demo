@@ -1,1 +1,1 @@
-export * from './ui-template-datepicker-page.component'
+export * from './ui-template-datepicker-page.component';

@@ -1,1 +1,1 @@
-export * from './ui-template-dialog.component'
+export * from './ui-template-dialog.component';

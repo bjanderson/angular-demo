@@ -1,1 +1,1 @@
-export * from './ui-template-toolbar-page.component'
+export * from './ui-template-toolbar-page.component';

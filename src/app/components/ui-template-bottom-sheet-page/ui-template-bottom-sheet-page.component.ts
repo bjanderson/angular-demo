@@ -5,15 +5,14 @@ import { UiTemplateBottomSheetPageBodyComponent } from './ui-template-bottom-she
 
 @Component({
   selector: 'ui-ui-template-bottom-sheet-page',
-  standalone: true,
   styleUrl: './ui-template-bottom-sheet-page.component.scss',
   templateUrl: './ui-template-bottom-sheet-page.component.html',
   imports: [MatBottomSheetModule, MatButtonModule],
 })
 export class UiTemplateBottomSheetPageComponent {
-  constructor(private bottomSheet: MatBottomSheet) {}
+  constructor(private matBottomSheet: MatBottomSheet) {}
 
   openBottomSheet(): void {
-    this.bottomSheet.open(UiTemplateBottomSheetPageBodyComponent);
+    this.matBottomSheet.open(UiTemplateBottomSheetPageBodyComponent);
   }
 }

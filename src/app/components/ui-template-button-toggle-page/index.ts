@@ -1,1 +1,1 @@
-export * from './ui-template-button-toggle-page.component'
+export * from './ui-template-button-toggle-page.component';

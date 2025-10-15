@@ -1,1 +1,1 @@
-export * from './ui-template-form-field-page.component'
+export * from './ui-template-form-field-page.component';

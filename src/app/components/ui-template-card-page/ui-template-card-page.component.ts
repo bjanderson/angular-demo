@@ -6,7 +6,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'ui-ui-template-card-page',
-  standalone: true,
   styleUrl: './ui-template-card-page.component.scss',
   templateUrl: './ui-template-card-page.component.html',
   imports: [MatButtonModule, MatCardModule, MatChipsModule, MatProgressBarModule],

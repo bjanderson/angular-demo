@@ -7,7 +7,7 @@
 
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
     @for (option of filteredOptions | async; track option) {
-    <mat-option [value]="option">{{ option.name }}</mat-option>
+      <mat-option [value]="option">{{ option.name }}</mat-option>
     }
   </mat-autocomplete>
 </mat-form-field>
@@ -19,7 +19,7 @@
 
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
     @for (option of filteredOptions | async; track option) {
-    <mat-option [value]="option">{{ option.name }}</mat-option>
+      <mat-option [value]="option">{{ option.name }}</mat-option>
     }
   </mat-autocomplete>
 </mat-form-field>
@@ -31,7 +31,7 @@
 
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
     @for (option of filteredOptions | async; track option) {
-    <mat-option [value]="option">{{ option.name }}</mat-option>
+      <mat-option [value]="option">{{ option.name }}</mat-option>
     }
   </mat-autocomplete>
 </mat-form-field>

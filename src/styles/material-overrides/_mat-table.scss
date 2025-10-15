@@ -1,4 +1,14 @@
-@import '_colors.scss';
+.mat-mdc-sort-header-content {
+  text-transform: capitalize;
+}
+
+.mat-mdc-paginator-container {
+  .mat-mdc-icon-button,
+  .mat-mdc-select-value,
+  .mat-mdc-select-arrow {
+    color: #333333;
+  }
+}
 
 // :root {
 // --mat-paginator-container-text-color: #1b1b1f;
@@ -39,15 +49,3 @@
 // --mat-table-row-item-outline-width: 1px;
 //   --mat-sort-arrow-color: #1b1b1f;
 // }
-
-.mat-mdc-sort-header-content {
-  text-transform: capitalize;
-}
-
-.mat-mdc-paginator-container {
-  .mat-mdc-icon-button,
-  .mat-mdc-select-value,
-  .mat-mdc-select-arrow {
-    color: $color-333333;
-  }
-}

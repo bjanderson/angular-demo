@@ -1,17 +1,18 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-@import 'material-extras/_material-color-mixin.scss';
-@import 'material-theme/_ui-theme.scss';
+@use 'material-extras/_material-color-mixin.scss' as material-color-mixin;
+@use 'material-theme/_ui-theme.scss' as ui-theme;
 
-// @debug $ui-theme;
+// @debug ui-theme.$ui-theme;
 
-@include mat.core();
-@include mat.color-variants-backwards-compatibility($ui-theme);
-@include mat.typography-hierarchy($ui-theme, $back-compat: true);
+@include mat.elevation-classes();
+@include mat.app-background();
+@include mat.color-variants-backwards-compatibility(ui-theme.$ui-theme);
+@include mat.typography-hierarchy(ui-theme.$ui-theme, $back-compat: true);
 
 :root {
-  @include mat.all-component-themes($ui-theme);
+  @include mat.all-component-themes(ui-theme.$ui-theme);
 
   // _material-color-mixin.scss
-  @include mat-component-variants($ui-theme);
+  @include material-color-mixin.mat-component-variants(ui-theme.$ui-theme);
 }

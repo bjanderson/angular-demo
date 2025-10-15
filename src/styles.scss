@@ -1,11 +1,11 @@
-@import '_colors.scss';
-@import '_cursors.scss';
-@import '_flex.scss';
-@import '_fonts.scss';
-@import '_positions.scss';
-@import '_typography.scss';
+@forward '_colors.scss';
+@forward '_cursors.scss';
+@forward '_flex.scss';
+@forward '_fonts.scss';
+@forward '_positions.scss';
+@forward '_typography.scss';
 
-@import '_dom.scss';
-@import '_page.scss';
+@forward '_dom.scss';
+@forward '_page.scss';
 
-@import 'material-overrides/_index.scss';
+@forward 'material-overrides/_index.scss';

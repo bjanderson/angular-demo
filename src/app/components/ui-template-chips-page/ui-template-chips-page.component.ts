@@ -1,7 +1,7 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { MatChipEditedEvent, MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,16 +16,22 @@ export interface Vegetable {
 
 @Component({
   selector: 'ui-ui-template-chips-page',
-  standalone: true,
   styleUrl: './ui-template-chips-page.component.scss',
   templateUrl: './ui-template-chips-page.component.html',
   imports: [CdkDropList, CdkDrag, MatFormFieldModule, MatChipsModule, MatIconModule],
 })
 export class UiTemplateChipsPageComponent {
-  readonly addOnBlur = true;
-  readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  readonly fruits = signal<Fruit[]>([{ name: 'Lemon' }, { name: 'Lime' }, { name: 'Apple' }]);
-  readonly announcer = inject(LiveAnnouncer);
+  addOnBlur: boolean;
+  separatorKeysCodes: number[];
+  fruits: WritableSignal<Fruit[]>;
+  announcer: LiveAnnouncer;
+
+  constructor() {
+    this.addOnBlur = true;
+    this.separatorKeysCodes = [ENTER, COMMA] as const;
+    this.fruits = signal<Fruit[]>([{ name: 'Lemon' }, { name: 'Lime' }, { name: 'Apple' }]);
+    this.announcer = inject(LiveAnnouncer);
+  }
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();

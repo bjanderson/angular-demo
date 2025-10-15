@@ -12,15 +12,20 @@
   <div mat-subheader>Folders</div>
 
   @for (folder of folders; track folder) {
-  <mat-list-item>
-    <div class="row center-v">
-      <mat-icon class="icon mr0-5" aria-hidden="true" fontSet="fas" fontIcon="fa-folder"></mat-icon>
-      <div class="col">
-        <div matListItemTitle>{{ folder.name }}</div>
-        <div matListItemLine>{{ folder.updated | date }}</div>
+    <mat-list-item>
+      <div class="row center-v">
+        <mat-icon
+          class="icon mr0-5"
+          aria-hidden="true"
+          fontSet="fas"
+          fontIcon="fa-folder"
+        ></mat-icon>
+        <div class="col">
+          <div matListItemTitle>{{ folder.name }}</div>
+          <div matListItemLine>{{ folder.updated | date }}</div>
+        </div>
       </div>
-    </div>
-  </mat-list-item>
+    </mat-list-item>
   }
 
   <mat-divider></mat-divider>
@@ -28,19 +33,19 @@
   <div mat-subheader>Notes</div>
 
   @for (note of notes; track note) {
-  <mat-list-item>
-    <div class="row center-v">
-      <mat-icon
-        class="icon mr0-5"
-        aria-hidden="true"
-        fontSet="fas"
-        fontIcon="fa-note-sticky"
-      ></mat-icon>
-      <div class="col">
-        <div matListItemTitle>{{ note.name }}</div>
-        <div matListItemLine>{{ note.updated | date }}</div>
+    <mat-list-item>
+      <div class="row center-v">
+        <mat-icon
+          class="icon mr0-5"
+          aria-hidden="true"
+          fontSet="fas"
+          fontIcon="fa-note-sticky"
+        ></mat-icon>
+        <div class="col">
+          <div matListItemTitle>{{ note.name }}</div>
+          <div matListItemLine>{{ note.updated | date }}</div>
+        </div>
       </div>
-    </div>
-  </mat-list-item>
+    </mat-list-item>
   }
 </mat-list>

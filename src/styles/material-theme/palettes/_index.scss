@@ -1,8 +1,8 @@
-@import './_primary-palette.scss';
-@import './_tertiary-palette.scss';
+@forward './_primary-palette.scss';
+@forward './_tertiary-palette.scss';
 
-@import './_tertiary-magenta-palette.scss';
-@import './_primary-magenta-palette.scss';
+@forward './_tertiary-magenta-palette.scss';
+@forward './_primary-magenta-palette.scss';
 
-@import './_app-primary-palette.scss';
-@import './_app-tertiary-palette.scss';
+@forward './_app-primary-palette.scss';
+@forward './_app-tertiary-palette.scss';

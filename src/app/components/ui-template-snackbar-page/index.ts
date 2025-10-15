@@ -1,1 +1,1 @@
-export * from './ui-template-snackbar-page.component'
+export * from './ui-template-snackbar-page.component';

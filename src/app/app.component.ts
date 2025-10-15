@@ -6,7 +6,6 @@ import { AppNavComponent } from './components/app-nav';
 
 @Component({
   selector: 'ui-root',
-  standalone: true,
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
   imports: [RouterOutlet, MatSidenavModule, AppNavComponent],

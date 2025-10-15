@@ -1,4 +1,4 @@
-@import '_page.scss';
+@use '_page.scss';
 
 :host {
   @extend .page;

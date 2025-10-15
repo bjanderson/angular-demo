@@ -1,1 +1,1 @@
-export * from './ui-template-chips-page.component'
+export * from './ui-template-chips-page.component';

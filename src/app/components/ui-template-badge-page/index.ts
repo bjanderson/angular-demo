@@ -1,1 +1,1 @@
-export * from './ui-template-badge-page.component'
+export * from './ui-template-badge-page.component';

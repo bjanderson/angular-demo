@@ -3,7 +3,6 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'ui-ui-template-bottom-sheet-page-body',
-  standalone: true,
   styleUrl: './ui-template-bottom-sheet-page-body.component.scss',
   templateUrl: './ui-template-bottom-sheet-page-body.component.html',
   imports: [],

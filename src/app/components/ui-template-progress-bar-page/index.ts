@@ -1,1 +1,1 @@
-export * from './ui-template-progress-bar-page.component'
+export * from './ui-template-progress-bar-page.component';

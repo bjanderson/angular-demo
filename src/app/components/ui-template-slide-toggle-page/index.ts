@@ -1,1 +1,1 @@
-export * from './ui-template-slide-toggle-page.component'
+export * from './ui-template-slide-toggle-page.component';

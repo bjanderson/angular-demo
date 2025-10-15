@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import 'material-theme/_ui-theme.scss';
+@use 'material-theme/_ui-theme.scss' as ui-theme;
 
 .page {
   padding: 1rem;
@@ -7,8 +7,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 
-  @if mat.get-theme-type($ui-theme) == dark {
-    background-color: mat.get-theme-color($ui-theme, neutral, 0);
+  @if mat.get-theme-type(ui-theme.$ui-theme) == dark {
+    background-color: mat.get-theme-color(ui-theme.$ui-theme, neutral, 0);
   } @else {
   }
 }

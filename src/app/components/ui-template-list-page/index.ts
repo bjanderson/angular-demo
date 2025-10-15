@@ -1,1 +1,1 @@
-export * from './ui-template-list-page.component'
+export * from './ui-template-list-page.component';

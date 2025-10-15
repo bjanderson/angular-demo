@@ -5,7 +5,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'ui-ui-template-tabs-page',
-  standalone: true,
   styleUrl: './ui-template-tabs-page.component.scss',
   templateUrl: './ui-template-tabs-page.component.html',
   imports: [MatTabsModule, MatButtonModule],

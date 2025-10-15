@@ -1,1 +1,1 @@
-export * from './ui-template-select-page.component'
+export * from './ui-template-select-page.component';

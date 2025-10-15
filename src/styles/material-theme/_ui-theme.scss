@@ -1,14 +1,13 @@
 @use '@angular/material' as mat;
-
-@import './palettes/_index.scss';
-@import './_ui-density.scss';
-@import './_ui-typography.scss';
+@use './palettes/_index.scss' as palettes;
+@use './_ui-density.scss' as ui-density;
+@use './_ui-typography.scss' as ui-typography;
 
 // $primary: $primary-palette;
 // $tertiary: $tertiary-palette;
 
-$primary: $app-primary-palette;
-$tertiary: $app-tertiary-palette;
+$primary: palettes.$app-primary-palette;
+$tertiary: palettes.$app-tertiary-palette;
 
 $ui-light-theme: mat.define-theme(
   (
@@ -17,8 +16,8 @@ $ui-light-theme: mat.define-theme(
       primary: $primary,
       tertiary: $tertiary,
     ),
-    density: $ui-density,
-    typography: $ui-typography,
+    density: ui-density.$ui-density,
+    typography: ui-typography.$ui-typography,
   )
 );
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -47,12 +47,11 @@ const NAMES: string[] = [
 
 @Component({
   selector: 'ui-ui-template-table-page',
-  standalone: true,
   styleUrl: './ui-template-table-page.component.scss',
   templateUrl: './ui-template-table-page.component.html',
   imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule],
 })
-export class UiTemplateTablePageComponent {
+export class UiTemplateTablePageComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
 

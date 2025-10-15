@@ -1,5 +1,4 @@
-/* eslint-disable max-classes-per-file */
-import { IDatabaseModel } from '@bjanderson/app-name-shared';
+// import { IDatabaseModel } from '@bjanderson/app-name-shared';
 import { getObject, getString } from '@bjanderson/utils';
 import { of } from 'rxjs';
 import { AlertService } from '../alert';
@@ -8,7 +7,7 @@ import { CrudService } from './crud.service';
 
 const url = 'test/url';
 
-class TestClass implements IDatabaseModel {
+class TestClass /* implements IDatabaseModel */ {
   public id: string;
   public get tableName() {
     return 'TEST';
@@ -22,11 +21,10 @@ class TestClass implements IDatabaseModel {
   }
 }
 
-// tslint:disable-next-line: max-classes-per-file
 class TestService extends CrudService<TestClass> {
   constructor(
     protected override alertService: AlertService,
-    protected override apiService: ApiService,
+    protected override apiService: ApiService
   ) {
     super(alertService, apiService, url, TestClass);
   }
@@ -43,6 +41,7 @@ const alertService: any = {
 const apiService: any = {
   delete: () => of(),
   get: () => of(),
+  patch: () => of(),
   post: () => of(),
   put: () => of(),
 };
@@ -73,7 +72,7 @@ describe('CrudService', () => {
     });
 
     it('calls apiService.get()', () => {
-      const spy = spyOn(service.api, 'get').and.callThrough();
+      const spy = spyOn(service.apiService, 'get').and.callThrough();
       service.getAll();
       expect(spy).toHaveBeenCalledWith(url);
     });
@@ -89,7 +88,7 @@ describe('CrudService', () => {
     });
 
     it('calls apiService.get()', () => {
-      const spy = spyOn(service.api, 'get').and.callThrough();
+      const spy = spyOn(service.apiService, 'get').and.callThrough();
       const id = 'id1';
       service.get(id);
       expect(spy).toHaveBeenCalledWith(`${url}/${id}`);
@@ -106,7 +105,7 @@ describe('CrudService', () => {
     });
 
     it('calls apiService.post()', () => {
-      const spy = spyOn(service.api, 'post').and.callThrough();
+      const spy = spyOn(service.apiService, 'post').and.callThrough();
       const testObj = new TestClass({ id: 'id1' });
       service.create(testObj);
       expect(spy).toHaveBeenCalledWith(url, testObj);
@@ -122,11 +121,11 @@ describe('CrudService', () => {
       expect(typeof service.update).toEqual('function');
     });
 
-    it('calls apiService.put()', () => {
-      const spy = spyOn(service.api, 'put').and.callThrough();
+    it('calls apiService.patch()', () => {
+      const spy = spyOn(service.apiService, 'patch').and.callThrough();
       const testObj = new TestClass({ id: 'id1' });
       service.update(testObj);
-      expect(spy).toHaveBeenCalledWith(url, testObj);
+      expect(spy).toHaveBeenCalledWith(`${url}/${testObj.id}`, testObj);
     });
   });
 
@@ -140,7 +139,7 @@ describe('CrudService', () => {
     });
 
     it('calls apiService.delete()', () => {
-      const spy = spyOn(service.api, 'delete').and.callThrough();
+      const spy = spyOn(service.apiService, 'delete').and.callThrough();
       const testObj = new TestClass({ id: 'id1' });
       service.delete(testObj);
       expect(spy).toHaveBeenCalledWith(`${url}/${testObj.id}`);

@@ -8,7 +8,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'ui-ui-template-slide-toggle-page',
-  standalone: true,
   styleUrl: './ui-template-slide-toggle-page.component.scss',
   templateUrl: './ui-template-slide-toggle-page.component.html',
   imports: [MatCardModule, MatRadioModule, FormsModule, MatCheckboxModule, MatSlideToggleModule],

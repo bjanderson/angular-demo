@@ -1,1 +1,1 @@
-export * from './ui-template-checkbox-page.component'
+export * from './ui-template-checkbox-page.component';

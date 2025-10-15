@@ -1,1 +1,1 @@
-export * from './ui-template-autocomplete-page.component'
+export * from './ui-template-autocomplete-page.component';

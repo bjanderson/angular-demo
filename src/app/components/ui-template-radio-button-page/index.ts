@@ -1,1 +1,1 @@
-export * from './ui-template-radio-button-page.component'
+export * from './ui-template-radio-button-page.component';

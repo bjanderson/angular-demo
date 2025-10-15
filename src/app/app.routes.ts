@@ -17,7 +17,7 @@ export const routes: Routes = [
         path: 'colors',
         loadComponent: () =>
           import('./components/ui-template-colors-page').then(
-            (c) => c.UiTemplateColorsPageComponent,
+            (c) => c.UiTemplateColorsPageComponent
           ),
       },
 
@@ -25,7 +25,7 @@ export const routes: Routes = [
         path: 'autocomplete',
         loadComponent: () =>
           import('./components/ui-template-autocomplete-page').then(
-            (c) => c.UiTemplateAutocompletePageComponent,
+            (c) => c.UiTemplateAutocompletePageComponent
           ),
       },
 
@@ -39,7 +39,7 @@ export const routes: Routes = [
         path: 'bottom-sheet',
         loadComponent: () =>
           import('./components/ui-template-bottom-sheet-page').then(
-            (c) => c.UiTemplateBottomSheetPageComponent,
+            (c) => c.UiTemplateBottomSheetPageComponent
           ),
       },
 
@@ -47,7 +47,7 @@ export const routes: Routes = [
         path: 'button-toggle',
         loadComponent: () =>
           import('./components/ui-template-button-toggle-page').then(
-            (c) => c.UiTemplateButtonTogglePageComponent,
+            (c) => c.UiTemplateButtonTogglePageComponent
           ),
       },
 
@@ -55,7 +55,7 @@ export const routes: Routes = [
         path: 'buttons',
         loadComponent: () =>
           import('./components/ui-template-buttons-page').then(
-            (c) => c.UiTemplateButtonsPageComponent,
+            (c) => c.UiTemplateButtonsPageComponent
           ),
       },
 
@@ -69,7 +69,7 @@ export const routes: Routes = [
         path: 'checkbox',
         loadComponent: () =>
           import('./components/ui-template-checkbox-page').then(
-            (c) => c.UiTemplateCheckboxPageComponent,
+            (c) => c.UiTemplateCheckboxPageComponent
           ),
       },
 
@@ -83,7 +83,7 @@ export const routes: Routes = [
         path: 'datepicker',
         loadComponent: () =>
           import('./components/ui-template-datepicker-page').then(
-            (c) => c.UiTemplateDatepickerPageComponent,
+            (c) => c.UiTemplateDatepickerPageComponent
           ),
       },
 
@@ -91,7 +91,7 @@ export const routes: Routes = [
         path: 'dialog',
         loadComponent: () =>
           import('./components/ui-template-dialog-page').then(
-            (c) => c.UiTemplateDialogPageComponent,
+            (c) => c.UiTemplateDialogPageComponent
           ),
       },
 
@@ -99,7 +99,7 @@ export const routes: Routes = [
         path: 'expansion-panel',
         loadComponent: () =>
           import('./components/ui-template-expansion-panel-page').then(
-            (c) => c.UiTemplateExpansionPanelPageComponent,
+            (c) => c.UiTemplateExpansionPanelPageComponent
           ),
       },
 
@@ -107,7 +107,7 @@ export const routes: Routes = [
         path: 'form-field',
         loadComponent: () =>
           import('./components/ui-template-form-field-page').then(
-            (c) => c.UiTemplateFormFieldPageComponent,
+            (c) => c.UiTemplateFormFieldPageComponent
           ),
       },
 
@@ -115,7 +115,7 @@ export const routes: Routes = [
         path: 'grid-list',
         loadComponent: () =>
           import('./components/ui-template-grid-list-page').then(
-            (c) => c.UiTemplateGridListPageComponent,
+            (c) => c.UiTemplateGridListPageComponent
           ),
       },
 
@@ -147,7 +147,7 @@ export const routes: Routes = [
         path: 'progress-bar',
         loadComponent: () =>
           import('./components/ui-template-progress-bar-page').then(
-            (c) => c.UiTemplateProgressBarPageComponent,
+            (c) => c.UiTemplateProgressBarPageComponent
           ),
       },
 
@@ -155,7 +155,7 @@ export const routes: Routes = [
         path: 'progress-spinner',
         loadComponent: () =>
           import('./components/ui-template-progress-spinner-page').then(
-            (c) => c.UiTemplateProgressSpinnerPageComponent,
+            (c) => c.UiTemplateProgressSpinnerPageComponent
           ),
       },
 
@@ -163,7 +163,7 @@ export const routes: Routes = [
         path: 'radio-button',
         loadComponent: () =>
           import('./components/ui-template-radio-button-page').then(
-            (c) => c.UiTemplateRadioButtonPageComponent,
+            (c) => c.UiTemplateRadioButtonPageComponent
           ),
       },
 
@@ -171,7 +171,7 @@ export const routes: Routes = [
         path: 'select',
         loadComponent: () =>
           import('./components/ui-template-select-page').then(
-            (c) => c.UiTemplateSelectPageComponent,
+            (c) => c.UiTemplateSelectPageComponent
           ),
       },
 
@@ -179,7 +179,7 @@ export const routes: Routes = [
         path: 'slide-toggle',
         loadComponent: () =>
           import('./components/ui-template-slide-toggle-page').then(
-            (c) => c.UiTemplateSlideTogglePageComponent,
+            (c) => c.UiTemplateSlideTogglePageComponent
           ),
       },
 
@@ -187,7 +187,7 @@ export const routes: Routes = [
         path: 'slider',
         loadComponent: () =>
           import('./components/ui-template-slider-page').then(
-            (c) => c.UiTemplateSliderPageComponent,
+            (c) => c.UiTemplateSliderPageComponent
           ),
       },
 
@@ -195,7 +195,7 @@ export const routes: Routes = [
         path: 'snackbar',
         loadComponent: () =>
           import('./components/ui-template-snackbar-page').then(
-            (c) => c.UiTemplateSnackbarPageComponent,
+            (c) => c.UiTemplateSnackbarPageComponent
           ),
       },
 
@@ -203,7 +203,7 @@ export const routes: Routes = [
         path: 'stepper',
         loadComponent: () =>
           import('./components/ui-template-stepper-page').then(
-            (c) => c.UiTemplateStepperPageComponent,
+            (c) => c.UiTemplateStepperPageComponent
           ),
       },
 
@@ -223,7 +223,7 @@ export const routes: Routes = [
         path: 'toolbar',
         loadComponent: () =>
           import('./components/ui-template-toolbar-page').then(
-            (c) => c.UiTemplateToolbarPageComponent,
+            (c) => c.UiTemplateToolbarPageComponent
           ),
       },
 
@@ -231,7 +231,7 @@ export const routes: Routes = [
         path: 'tooltip',
         loadComponent: () =>
           import('./components/ui-template-tooltip-page').then(
-            (c) => c.UiTemplateTooltipPageComponent,
+            (c) => c.UiTemplateTooltipPageComponent
           ),
       },
 
@@ -245,7 +245,7 @@ export const routes: Routes = [
         path: 'typography',
         loadComponent: () =>
           import('./components/ui-template-typography-page').then(
-            (c) => c.UiTemplateTypographyPageComponent,
+            (c) => c.UiTemplateTypographyPageComponent
           ),
       },
     ],

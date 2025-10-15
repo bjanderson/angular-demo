@@ -1,1 +1,1 @@
-export * from './ui-template-tabs-page.component'
+export * from './ui-template-tabs-page.component';

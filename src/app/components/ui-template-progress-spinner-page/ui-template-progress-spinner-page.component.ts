@@ -8,7 +8,6 @@ import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'ui-ui-template-progress-spinner-page',
-  standalone: true,
   styleUrl: './ui-template-progress-spinner-page.component.scss',
   templateUrl: './ui-template-progress-spinner-page.component.html',
   imports: [MatCardModule, MatRadioModule, FormsModule, MatSliderModule, MatProgressSpinnerModule],

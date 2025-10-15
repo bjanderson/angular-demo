@@ -1,1 +1,1 @@
-export * from './ui-template-colors-page.component'
+export * from './ui-template-colors-page.component';

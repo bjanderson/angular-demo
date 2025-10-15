@@ -12,7 +12,6 @@ export interface User {
 
 @Component({
   selector: 'ui-ui-template-autocomplete-page',
-  standalone: true,
   styleUrl: './ui-template-autocomplete-page.component.scss',
   templateUrl: './ui-template-autocomplete-page.component.html',
   imports: [
@@ -36,7 +35,7 @@ export class UiTemplateAutocompletePageComponent {
       map((value) => {
         const name = typeof value === 'string' ? value : value?.name;
         return name ? this.filter(`${name}`) : this.options.slice();
-      }),
+      })
     );
   }
 

@@ -8,7 +8,6 @@ import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'ui-ui-template-progress-bar-page',
-  standalone: true,
   styleUrl: './ui-template-progress-bar-page.component.scss',
   templateUrl: './ui-template-progress-bar-page.component.html',
   imports: [MatCardModule, MatRadioModule, FormsModule, MatSliderModule, MatProgressBarModule],

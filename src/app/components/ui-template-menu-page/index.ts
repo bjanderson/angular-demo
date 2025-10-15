@@ -1,1 +1,1 @@
-export * from './ui-template-menu-page.component'
+export * from './ui-template-menu-page.component';

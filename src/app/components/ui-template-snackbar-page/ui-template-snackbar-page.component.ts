@@ -6,15 +6,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'ui-ui-template-snackbar-page',
-  standalone: true,
   styleUrl: './ui-template-snackbar-page.component.scss',
   templateUrl: './ui-template-snackbar-page.component.html',
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule],
 })
 export class UiTemplateSnackbarPageComponent {
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private matSnackBar: MatSnackBar) {}
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.matSnackBar.open(message, action);
   }
 }

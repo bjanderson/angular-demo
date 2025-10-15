@@ -1,1 +1,1 @@
-export * from './ui-template-stepper-page.component'
+export * from './ui-template-stepper-page.component';

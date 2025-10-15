@@ -1,1 +1,1 @@
-export * from './ui-template-input-page.component'
+export * from './ui-template-input-page.component';

@@ -13,7 +13,7 @@ export abstract class CrudService<T extends IHasId> {
     protected alertService: AlertService,
     protected apiService: ApiService,
     private url: string,
-    private Model: new (o?: Partial<T>) => T,
+    private Model: new (o?: Partial<T>) => T
   ) {
     this.models = signal<T[]>(null);
   }
@@ -29,7 +29,7 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: create() failed`);
         return EMPTY;
-      }),
+      })
     );
   }
 
@@ -46,7 +46,7 @@ export abstract class CrudService<T extends IHasId> {
         catchError((error: ErrorResponse) => {
           this.alertService.error(`${CrudService.name}: getAll() failed`);
           return EMPTY;
-        }),
+        })
       )
       .subscribe((models: T[]) => {});
   }
@@ -59,7 +59,7 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: get(${id}) failed`);
         return EMPTY;
-      }),
+      })
     );
   }
 
@@ -80,7 +80,7 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: update() failed`);
         return EMPTY;
-      }),
+      })
     );
   }
 
@@ -97,7 +97,7 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: delete() failed`);
         return EMPTY;
-      }),
+      })
     );
   }
 }

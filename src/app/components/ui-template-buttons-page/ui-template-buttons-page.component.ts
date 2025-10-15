@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'ui-ui-template-buttons-page',
-  standalone: true,
   styleUrl: './ui-template-buttons-page.component.scss',
   templateUrl: './ui-template-buttons-page.component.html',
   imports: [CommonModule, MatButtonModule, MatDividerModule, MatIconModule],

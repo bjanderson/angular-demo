@@ -1,1 +1,1 @@
-export * from './ui-template-buttons-page.component'
+export * from './ui-template-buttons-page.component';

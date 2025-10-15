@@ -1,1 +1,1 @@
-export * from './ui-template-slider-page.component'
+export * from './ui-template-slider-page.component';

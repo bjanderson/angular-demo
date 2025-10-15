@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ui-ui-template-typography-page',
-  standalone: true,
   styleUrl: './ui-template-typography-page.component.scss',
   templateUrl: './ui-template-typography-page.component.html',
   imports: [],

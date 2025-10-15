@@ -1,3 +1,4 @@
+import '../../../mocks/@angular/core/core.mock';
 import { UiTemplateChipsPageComponent } from './ui-template-chips-page.component';
 
 let component: any;
@@ -9,7 +10,7 @@ describe('UiTemplateChipsPageComponent', () => {
   describe('constructor', () => {
     beforeEach(() => {
       init();
-    })
+    });
 
     it('should construct', () => {
       expect(component).toBeDefined();

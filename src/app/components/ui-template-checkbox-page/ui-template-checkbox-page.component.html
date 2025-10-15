@@ -17,11 +17,11 @@
   <span class="example-list-section">
     <ul>
       @for (subtask of task().subtasks; track subtask; let i = $index) {
-      <li>
-        <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
-          {{ subtask.name }}
-        </mat-checkbox>
-      </li>
+        <li>
+          <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
+            {{ subtask.name }}
+          </mat-checkbox>
+        </li>
       }
     </ul>
   </span>

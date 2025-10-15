@@ -1,1 +1,1 @@
-export * from './ui-template-card-page.component'
+export * from './ui-template-card-page.component';

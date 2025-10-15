@@ -1,1 +1,1 @@
-export * from './ui-template-typography-page.component'
+export * from './ui-template-typography-page.component';

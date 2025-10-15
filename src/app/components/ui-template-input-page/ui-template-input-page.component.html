@@ -4,8 +4,8 @@
   <input matInput type="text" [formControl]="inputCtrl" />
 
   @if (inputCtrl.value) {
-  <button matSuffix mat-icon-button aria-label="Clear" (click)="inputCtrl.setValue('')">
-    <mat-icon class="icon" aria-hidden="true" fontSet="fas" fontIcon="fa-times"></mat-icon>
-  </button>
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="inputCtrl.setValue('')">
+      <mat-icon class="icon" aria-hidden="true" fontSet="fas" fontIcon="fa-times"></mat-icon>
+    </button>
   }
 </mat-form-field>

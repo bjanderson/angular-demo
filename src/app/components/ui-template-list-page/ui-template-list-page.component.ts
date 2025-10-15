@@ -11,7 +11,6 @@ export interface Section {
 
 @Component({
   selector: 'ui-ui-template-list-page',
-  standalone: true,
   styleUrl: './ui-template-list-page.component.scss',
   templateUrl: './ui-template-list-page.component.html',
   imports: [DatePipe, MatDividerModule, MatIconModule, MatListModule],

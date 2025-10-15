@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
-@import '../material.scss';
-@import '_page.scss';
-@import '_typography.scss';
+@use '../material.scss';
+@use '_page.scss';
+@use '_typography.scss';
 
 :host {
   @extend .page;

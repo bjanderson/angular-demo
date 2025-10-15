@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -12,10 +11,9 @@ import { UiTemplateDialogBodyComponent } from './ui-template-dialog-body.compone
 
 @Component({
   selector: 'ui-template-dialog',
-  standalone: true,
   styleUrl: './ui-template-dialog.component.scss',
   templateUrl: './ui-template-dialog.component.html',
-  imports: [NgIf, MatButtonModule, MatDialogModule, MatIconModule],
+  imports: [MatButtonModule, MatDialogModule, MatIconModule],
 })
 export class UiTemplateDialogComponent {
   dialogRef: MatDialogRef<UiTemplateDialogBodyComponent>;

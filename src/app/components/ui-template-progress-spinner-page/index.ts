@@ -1,1 +1,1 @@
-export * from './ui-template-progress-spinner-page.component'
+export * from './ui-template-progress-spinner-page.component';

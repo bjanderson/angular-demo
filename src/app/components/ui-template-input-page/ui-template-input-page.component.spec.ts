@@ -9,7 +9,7 @@ describe('UiTemplateInputPageComponent', () => {
   describe('constructor', () => {
     beforeEach(() => {
       init();
-    })
+    });
 
     it('should construct', () => {
       expect(component).toBeDefined();

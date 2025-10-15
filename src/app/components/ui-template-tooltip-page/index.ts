@@ -1,1 +1,1 @@
-export * from './ui-template-tooltip-page.component'
+export * from './ui-template-tooltip-page.component';
