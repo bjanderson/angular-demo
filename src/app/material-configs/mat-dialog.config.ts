@@ -1,6 +1,6 @@
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig } from '@angular/material/dialog';
 
-const DEFAULT_DIALOG_OPTIONS: MatDialogConfig = {
+export const DEFAULT_DIALOG_OPTIONS: MatDialogConfig = {
   ariaDescribedBy: '',
   ariaLabel: '',
   ariaLabelledBy: '',

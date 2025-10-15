@@ -3,7 +3,7 @@ import {
   MatCheckboxDefaultOptions,
 } from '@angular/material/checkbox';
 
-const DEFAULT_CHECKBOX_OPTIONS: MatCheckboxDefaultOptions = {
+export const DEFAULT_CHECKBOX_OPTIONS: MatCheckboxDefaultOptions = {
   clickAction: 'check-indeterminate',
 };
 

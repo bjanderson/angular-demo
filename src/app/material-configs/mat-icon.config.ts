@@ -1,6 +1,6 @@
 import { MAT_ICON_DEFAULT_OPTIONS, MatIconDefaultOptions } from '@angular/material/icon';
 
-const DEFAULT_ICON_OPTIONS: MatIconDefaultOptions = {
+export const DEFAULT_ICON_OPTIONS: MatIconDefaultOptions = {
   fontSet: 'fas',
 };
 

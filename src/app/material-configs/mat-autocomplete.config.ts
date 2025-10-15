@@ -3,7 +3,7 @@ import {
   MatAutocompleteDefaultOptions,
 } from '@angular/material/autocomplete';
 
-const DEFAULT_AUTOCOMPLETE_OPTIONS: MatAutocompleteDefaultOptions = {
+export const DEFAULT_AUTOCOMPLETE_OPTIONS: MatAutocompleteDefaultOptions = {
   autoActiveFirstOption: false,
   autoSelectActiveOption: false,
   hideSingleSelectionIndicator: true,

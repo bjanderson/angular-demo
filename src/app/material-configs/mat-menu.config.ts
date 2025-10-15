@@ -1,6 +1,6 @@
 import { MAT_MENU_DEFAULT_OPTIONS, MatMenuDefaultOptions } from '@angular/material/menu';
 
-const DEFAULT_MENU_OPTIONS: MatMenuDefaultOptions = {
+export const DEFAULT_MENU_OPTIONS: MatMenuDefaultOptions = {
   backdropClass: '',
   hasBackdrop: true,
   overlapTrigger: false,

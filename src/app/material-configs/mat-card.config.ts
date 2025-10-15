@@ -1,6 +1,6 @@
 import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card';
 
-const DEFAULT_CARD_OPTIONS: MatCardConfig = {
+export const DEFAULT_CARD_OPTIONS: MatCardConfig = {
   appearance: 'raised',
 };
 

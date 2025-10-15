@@ -3,7 +3,7 @@ import {
   MatPaginatorDefaultOptions,
 } from '@angular/material/paginator';
 
-const DEFAULT_PAGINATOR_OPTIONS: MatPaginatorDefaultOptions = {
+export const DEFAULT_PAGINATOR_OPTIONS: MatPaginatorDefaultOptions = {
   formFieldAppearance: 'fill',
   hidePageSize: false,
   pageSize: 50,

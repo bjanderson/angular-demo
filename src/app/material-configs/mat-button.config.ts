@@ -1,6 +1,6 @@
 import { MAT_BUTTON_CONFIG, MatButtonConfig } from '@angular/material/button';
 
-const DEFAULT_BUTTON_OPTIONS: MatButtonConfig = {
+export const DEFAULT_BUTTON_OPTIONS: MatButtonConfig = {
   disabledInteractive: true,
 };
 

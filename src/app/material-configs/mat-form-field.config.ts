@@ -3,7 +3,7 @@ import {
   MatFormFieldDefaultOptions,
 } from '@angular/material/form-field';
 
-const DEFAULT_FORM_FIELD_OPTIONS: MatFormFieldDefaultOptions = {
+export const DEFAULT_FORM_FIELD_OPTIONS: MatFormFieldDefaultOptions = {
   appearance: 'fill',
   floatLabel: 'auto',
   hideRequiredMarker: true,

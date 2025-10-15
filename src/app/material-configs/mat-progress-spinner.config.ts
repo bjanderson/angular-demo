@@ -3,7 +3,7 @@ import {
   MatProgressSpinnerDefaultOptions,
 } from '@angular/material/progress-spinner';
 
-const DEFAULT_PROGRESS_SPINNER_OPTIONS: MatProgressSpinnerDefaultOptions = {
+export const DEFAULT_PROGRESS_SPINNER_OPTIONS: MatProgressSpinnerDefaultOptions = {
   diameter: 100,
   strokeWidth: 10,
 };

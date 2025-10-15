@@ -3,7 +3,7 @@ import {
   MatProgressBarDefaultOptions,
 } from '@angular/material/progress-bar';
 
-const DEFAULT_PROGRESS_BAR_OPTIONS: MatProgressBarDefaultOptions = {
+export const DEFAULT_PROGRESS_BAR_OPTIONS: MatProgressBarDefaultOptions = {
   mode: 'indeterminate',
 };
 

@@ -3,7 +3,7 @@ import {
   MatExpansionPanelDefaultOptions,
 } from '@angular/material/expansion';
 
-const DEFAULT_EXPANSION_PANEL_OPTIONS: MatExpansionPanelDefaultOptions = {
+export const DEFAULT_EXPANSION_PANEL_OPTIONS: MatExpansionPanelDefaultOptions = {
   collapsedHeight: '2rem',
   expandedHeight: '10rem',
   hideToggle: false,

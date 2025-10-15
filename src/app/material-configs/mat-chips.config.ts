@@ -1,6 +1,6 @@
 import { MAT_CHIPS_DEFAULT_OPTIONS, MatChipsDefaultOptions } from '@angular/material/chips';
 
-const DEFAULT_CHIPS_OPTIONS: MatChipsDefaultOptions = {
+export const DEFAULT_CHIPS_OPTIONS: MatChipsDefaultOptions = {
   hideSingleSelectionIndicator: true,
   separatorKeyCodes: [],
 };

@@ -1,6 +1,6 @@
 import { MAT_SORT_DEFAULT_OPTIONS, MatSortDefaultOptions } from '@angular/material/sort';
 
-const DEFAULT_SORT_OPTIONS: MatSortDefaultOptions = {
+export const DEFAULT_SORT_OPTIONS: MatSortDefaultOptions = {
   arrowPosition: 'after',
   disableClear: false,
 };

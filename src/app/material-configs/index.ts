@@ -16,6 +16,7 @@ import { matProgressSpinnerConfigProvider } from './mat-progress-spinner.config'
 import { matSlideToggleConfigProvider } from './mat-slide-toggle.config';
 import { matSnackBarConfigProvider } from './mat-snack-bar.config';
 import { matSortConfigProvider } from './mat-sort.config';
+import { matTabsConfigProvider } from './mat-tabs.config';
 
 export function provideMaterialConfigs() {
   return makeEnvironmentProviders([
@@ -36,5 +37,6 @@ export function provideMaterialConfigs() {
     matSlideToggleConfigProvider,
     matSnackBarConfigProvider,
     matSortConfigProvider,
+    matTabsConfigProvider,
   ]);
 }

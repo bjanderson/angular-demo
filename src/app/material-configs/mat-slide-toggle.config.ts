@@ -3,7 +3,7 @@ import {
   MatSlideToggleDefaultOptions,
 } from '@angular/material/slide-toggle';
 
-const DEFAULT_SLIDE_TOGGLE_OPTIONS: MatSlideToggleDefaultOptions = {
+export const DEFAULT_SLIDE_TOGGLE_OPTIONS: MatSlideToggleDefaultOptions = {
   disableToggleValue: false,
   hideIcon: false,
 };

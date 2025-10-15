@@ -3,7 +3,7 @@ import {
   MatButtonToggleDefaultOptions,
 } from '@angular/material/button-toggle';
 
-const DEFAULT_BUTTON_TOGGLE_OPTIONS: MatButtonToggleDefaultOptions = {
+export const DEFAULT_BUTTON_TOGGLE_OPTIONS: MatButtonToggleDefaultOptions = {
   appearance: 'standard',
   hideMultipleSelectionIndicator: true,
   hideSingleSelectionIndicator: true,
