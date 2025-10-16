@@ -12,7 +12,8 @@
     "sass:styles": "npm run sass src/styles.scss ./tmp/styles.css",
     "sass:color-mixin": "npm run sass src/styles/_color-mixin.scss ./tmp/color-mixin.css",
     "test": "ng test",
-    "test:coverage": "ng test --coverage",
+    "test:file": "ng test --test-path-pattern",
+    "test:cov": "ng test --coverage",
     "test:watch": "ng test --clearCache && ng test --watch",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"

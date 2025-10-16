@@ -57,6 +57,12 @@ const specFileName = parseTemplate(`${folder}/kabab-case.service.spec.ts`);
 const specTxt = parseTemplate(specTemplate);
 writeFile(specFileName, specTxt);
 
+const mockTemplate = `export const camelCaseService: any = {};
+`;
+const mockFileName = parseTemplate(`${folder}/kabab-case.service.mock.ts`);
+const mockTxt = parseTemplate(mockTemplate);
+writeFile(mockFileName, mockTxt);
+
 const indexTemplate = `export * from './kabab-case.service'`;
 const indexFileName = parseTemplate(`${folder}/index.ts`);
 const indexTxt = parseTemplate(indexTemplate);

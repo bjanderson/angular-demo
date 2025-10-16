@@ -3,11 +3,10 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest';
-import { createCjsPreset } from 'jest-preset-angular/presets';
+const presets = require('jest-preset-angular/presets');
 
-const config: Config = {
-  ...createCjsPreset(),
+const config = {
+  ...presets.createCjsPreset(),
 
   clearMocks: true,
 
@@ -27,7 +26,7 @@ const config: Config = {
 
   coverageProvider: 'v8',
 
-  coverageReporters: ['lcov', 'text-summary'],
+  coverageReporters: ['lcov'],
 
   moduleNameMapper: {
     uuid: require.resolve('uuid'),
@@ -35,15 +34,11 @@ const config: Config = {
 
   preset: 'jest-preset-angular',
 
-  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
-
   testEnvironment: 'jsdom',
 
   testMatch: ['<rootDir>/src/app/*.spec.ts', '<rootDir>/src/app/**/*.spec.ts'],
 
   testRunner: 'jest-jasmine2',
-} satisfies Config;
+};
 
-console.log('config :>> ', config);
-
-export default config;
+module.exports = config;
