@@ -6,10 +6,10 @@ const folder = `${parentFolder}/${config.kabab}`;
 createDirectoryIfNotExists(folder);
 
 const tsTemplate = `import { Injectable } from '@angular/core';
-import { PascalCase } from '@bjanderson/moneytool-shared';
 import { AlertService } from '../alert';
 import { ApiService } from '../api';
 import { CrudService } from '../crud';
+import { LoadingService } from '../loading';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +18,9 @@ export class PascalCaseService extends CrudService<PascalCase> {
   constructor(
     protected override alertService: AlertService,
     protected override apiService: ApiService,
+    protected override loadingService: LoadingService
   ) {
-    super(alertService, apiService, 'api/kabab-case', PascalCase);
+    super(alertService, apiService, loadingService, 'api/kabab-case', PascalCase);
     this.getAll();
   }
 }
@@ -30,14 +31,13 @@ const tsTxt = parseTemplate(tsTemplate);
 writeFile(tsFileName, tsTxt);
 
 const specTemplate = `import { PascalCaseService } from './kabab-case.service';
-
-const alertService: any = {};
-
-const apiService: any = {}
+import { alertService } from '../alert/alert.service.mock';
+import { apiService } from '../api/api.service.mock';
+import { loadingService } from '../loading/loading.service.mock';
 
 let service: any;
 function init(): void {
-  service = new PascalCaseService(alertService, apiService);
+  service = new PascalCaseService(alertService, apiService, loadingService);
 }
 
 describe('PascalCaseService', () => {

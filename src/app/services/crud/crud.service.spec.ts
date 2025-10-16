@@ -1,8 +1,21 @@
 // import { IDatabaseModel } from '@bjanderson/app-name-shared';
 import { getObject, getString } from '@bjanderson/utils';
-import { of } from 'rxjs';
 import { AlertService } from '../alert';
+import { alertService } from '../alert/alert.service.mock';
 import { ApiService } from '../api';
+import {
+  apiService,
+  callsApiServiceDelete,
+  callsApiServiceGet,
+  callsApiServicePatch,
+  callsApiServicePost,
+} from '../api/api.service.mock';
+import { LoadingService } from '../loading';
+import {
+  callsLoadingServiceHideLoading,
+  callsLoadingServiceShowLoading,
+  loadingService,
+} from '../loading/loading.service.mock';
 import { CrudService } from './crud.service';
 
 const url = 'test/url';
@@ -24,31 +37,16 @@ class TestClass /* implements IDatabaseModel */ {
 class TestService extends CrudService<TestClass> {
   constructor(
     protected override alertService: AlertService,
-    protected override apiService: ApiService
+    protected override apiService: ApiService,
+    protected override loadingService: LoadingService
   ) {
-    super(alertService, apiService, url, TestClass);
+    super(alertService, apiService, loadingService, url, TestClass);
   }
 }
 
-const alertService: any = {
-  error: () => undefined,
-  errorResponse: () => undefined,
-  info: () => undefined,
-  success: () => undefined,
-  warning: () => undefined,
-};
-
-const apiService: any = {
-  delete: () => of(),
-  get: () => of(),
-  patch: () => of(),
-  post: () => of(),
-  put: () => of(),
-};
-
 let service: any;
 function init(): void {
-  service = new TestService(alertService, apiService);
+  service = new TestService(alertService, apiService, loadingService);
 }
 
 describe('CrudService', () => {
@@ -71,14 +69,22 @@ describe('CrudService', () => {
       expect(typeof service.getAll).toEqual('function');
     });
 
-    it('calls apiService.get()', () => {
-      const spy = spyOn(service.apiService, 'get').and.callThrough();
-      service.getAll();
-      expect(spy).toHaveBeenCalledWith(url);
+    callsLoadingServiceShowLoading(() => {
+      service.getAll().subscribe();
+    });
+
+    callsApiServiceGet(() => {
+      service.getAll().subscribe();
+    }, [url]);
+
+    callsLoadingServiceHideLoading(() => {
+      service.getAll().subscribe();
     });
   });
 
   describe('get()', () => {
+    const id = 'id1';
+
     beforeEach(() => {
       init();
     });
@@ -87,15 +93,22 @@ describe('CrudService', () => {
       expect(typeof service.get).toEqual('function');
     });
 
-    it('calls apiService.get()', () => {
-      const spy = spyOn(service.apiService, 'get').and.callThrough();
-      const id = 'id1';
-      service.get(id);
-      expect(spy).toHaveBeenCalledWith(`${url}/${id}`);
+    callsLoadingServiceShowLoading(() => {
+      service.get(id).subscribe();
+    });
+
+    callsApiServiceGet(() => {
+      service.get(id).subscribe();
+    }, [`${url}/${id}`]);
+
+    callsLoadingServiceHideLoading(() => {
+      service.get(id).subscribe();
     });
   });
 
   describe('create()', () => {
+    const testObj = new TestClass({ id: 'id1' });
+
     beforeEach(() => {
       init();
     });
@@ -104,15 +117,22 @@ describe('CrudService', () => {
       expect(typeof service.create).toEqual('function');
     });
 
-    it('calls apiService.post()', () => {
-      const spy = spyOn(service.apiService, 'post').and.callThrough();
-      const testObj = new TestClass({ id: 'id1' });
-      service.create(testObj);
-      expect(spy).toHaveBeenCalledWith(url, testObj);
+    callsLoadingServiceShowLoading(() => {
+      service.create(testObj).subscribe();
+    });
+
+    callsApiServicePost(() => {
+      service.create(testObj).subscribe();
+    }, [url, testObj]);
+
+    callsLoadingServiceHideLoading(() => {
+      service.create(testObj).subscribe();
     });
   });
 
   describe('update()', () => {
+    const testObj = new TestClass({ id: 'id1' });
+
     beforeEach(() => {
       init();
     });
@@ -121,15 +141,22 @@ describe('CrudService', () => {
       expect(typeof service.update).toEqual('function');
     });
 
-    it('calls apiService.patch()', () => {
-      const spy = spyOn(service.apiService, 'patch').and.callThrough();
-      const testObj = new TestClass({ id: 'id1' });
-      service.update(testObj);
-      expect(spy).toHaveBeenCalledWith(`${url}/${testObj.id}`, testObj);
+    callsLoadingServiceShowLoading(() => {
+      service.update(testObj).subscribe();
+    });
+
+    callsApiServicePatch(() => {
+      service.update(testObj).subscribe();
+    }, [`${url}/${testObj.id}`, testObj]);
+
+    callsLoadingServiceHideLoading(() => {
+      service.update(testObj).subscribe();
     });
   });
 
   describe('delete()', () => {
+    const testObj = new TestClass({ id: 'id1' });
+
     beforeEach(() => {
       init();
     });
@@ -138,11 +165,16 @@ describe('CrudService', () => {
       expect(typeof service.delete).toEqual('function');
     });
 
-    it('calls apiService.delete()', () => {
-      const spy = spyOn(service.apiService, 'delete').and.callThrough();
-      const testObj = new TestClass({ id: 'id1' });
-      service.delete(testObj);
-      expect(spy).toHaveBeenCalledWith(`${url}/${testObj.id}`);
+    callsLoadingServiceShowLoading(() => {
+      service.delete(testObj).subscribe();
+    });
+
+    callsApiServiceDelete(() => {
+      service.delete(testObj).subscribe();
+    }, [`${url}/${testObj.id}`]);
+
+    callsLoadingServiceHideLoading(() => {
+      service.delete(testObj).subscribe();
     });
   });
 });

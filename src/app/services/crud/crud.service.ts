@@ -1,10 +1,11 @@
 import { WritableSignal, signal } from '@angular/core';
 import { ErrorResponse, getArrayOfModels } from '@bjanderson/utils';
 import { EMPTY, Observable } from 'rxjs';
-import { catchError, map, take } from 'rxjs/operators';
+import { catchError, finalize, map, take } from 'rxjs/operators';
 import { IHasId } from '../../interfaces';
 import { AlertService } from '../alert';
 import { ApiService } from '../api';
+import { LoadingService } from '../loading';
 
 export abstract class CrudService<T extends IHasId> {
   models: WritableSignal<T[]>;
@@ -12,6 +13,7 @@ export abstract class CrudService<T extends IHasId> {
   constructor(
     protected alertService: AlertService,
     protected apiService: ApiService,
+    protected loadingService: LoadingService,
     private url: string,
     private Model: new (o?: Partial<T>) => T
   ) {
@@ -19,6 +21,7 @@ export abstract class CrudService<T extends IHasId> {
   }
 
   public create(obj: T[]): Observable<T[]> {
+    this.loadingService.showLoading();
     return this.apiService.post(this.url, obj).pipe(
       take(1),
       map((response: any) => {
@@ -29,29 +32,34 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: create() failed`);
         return EMPTY;
+      }),
+      finalize(() => {
+        this.loadingService.hideLoading();
       })
     );
   }
 
-  public getAll(args?: any): void {
-    this.apiService
-      .get(this.url)
-      .pipe(
-        take(1),
-        map((response: any) => {
-          const models = getArrayOfModels(this.Model, response);
-          this.models.set(models);
-          return models;
-        }),
-        catchError((error: ErrorResponse) => {
-          this.alertService.error(`${CrudService.name}: getAll() failed`);
-          return EMPTY;
-        })
-      )
-      .subscribe((models: T[]) => {});
+  public getAll(args?: any): Observable<T[]> {
+    this.loadingService.showLoading();
+    return this.apiService.get(this.url).pipe(
+      take(1),
+      map((response: any) => {
+        const models = getArrayOfModels(this.Model, response);
+        this.models.set(models);
+        return models;
+      }),
+      catchError((error: ErrorResponse) => {
+        this.alertService.error(`${CrudService.name}: getAll() failed`);
+        return EMPTY;
+      }),
+      finalize(() => {
+        this.loadingService.hideLoading();
+      })
+    );
   }
 
   public get(id: string): Observable<T> {
+    this.loadingService.showLoading();
     const url = `${this.url}/${id}`;
     return this.apiService.get(url).pipe(
       take(1),
@@ -59,11 +67,15 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: get(${id}) failed`);
         return EMPTY;
+      }),
+      finalize(() => {
+        this.loadingService.hideLoading();
       })
     );
   }
 
   public update(obj: T): Observable<T> {
+    this.loadingService.showLoading();
     return this.apiService.patch(`${this.url}/${obj.id}`, obj).pipe(
       take(1),
       map((response: any) => {
@@ -80,11 +92,15 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: update() failed`);
         return EMPTY;
+      }),
+      finalize(() => {
+        this.loadingService.hideLoading();
       })
     );
   }
 
   public delete(model: T): Observable<void> {
+    this.loadingService.showLoading();
     const url = `${this.url}/${model.id}`;
     return this.apiService.delete(url).pipe(
       take(1),
@@ -97,6 +113,9 @@ export abstract class CrudService<T extends IHasId> {
       catchError((error: ErrorResponse) => {
         this.alertService.error(`${CrudService.name}: delete() failed`);
         return EMPTY;
+      }),
+      finalize(() => {
+        this.loadingService.hideLoading();
       })
     );
   }
