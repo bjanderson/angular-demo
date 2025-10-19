@@ -1,8 +1,5 @@
+import { matIconRegistry } from 'src/mocks/@angular/material/mat-icon.mock';
 import { AppComponent } from './app.component';
-
-const matIconRegistry: any = {
-  setDefaultFontSetClass: () => undefined,
-};
 
 let component: any;
 function init(): void {

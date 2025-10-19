@@ -29,6 +29,7 @@ const config = {
   coverageReporters: ['lcov'],
 
   moduleNameMapper: {
+    'src/(.*)': '<rootDir>/src/$1',
     uuid: require.resolve('uuid'),
   },
 

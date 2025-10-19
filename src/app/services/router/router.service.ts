@@ -10,8 +10,4 @@ export class RouterService {
   goToUrl(url: string): void {
     this.router.navigateByUrl(url);
   }
-
-  goToAccountPage(accountId: string): void {
-    this.goToUrl(`/accounts/${accountId}`);
-  }
 }

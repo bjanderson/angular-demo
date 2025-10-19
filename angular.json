@@ -10,48 +10,49 @@
   "newProjectRoot": "projects",
   "projects": {
     "angular-demo": {
-      "projectType": "application",
+      "prefix": "ui",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
+      "projectType": "application",
       "root": "",
       "sourceRoot": "src",
-      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/angular-demo",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
+            "baseHref": "./",
+            "browser": "src/main.ts",
+            "index": "src/index.html",
+            "inlineStyleLanguage": "scss",
+            "outputPath": "dist/angular-demo",
+            "polyfills": ["zone.js"],
+            "scripts": [],
+            "stylePreprocessorOptions": { "includePaths": ["src/styles"] },
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/material.scss",
               "src/styles.scss"
             ],
-            "stylePreprocessorOptions": { "includePaths": ["src/styles"] },
-            "scripts": []
+            "tsConfig": "tsconfig.app.json"
           },
           "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true
+            },
             "production": {
               "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -59,11 +60,11 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "angular-demo:build:production"
-            },
             "development": {
               "buildTarget": "angular-demo:build:development"
+            },
+            "production": {
+              "buildTarget": "angular-demo:build:production"
             }
           },
           "defaultConfiguration": "development",
@@ -72,13 +73,13 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
         },
-        "test": {
-          "builder": "@angular-builders/jest:run",
-          "options": {}
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": { "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"] }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {}
         }
       }
     }

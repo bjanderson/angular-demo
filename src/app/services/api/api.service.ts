@@ -22,17 +22,20 @@ export class ApiService {
   /**
    * Makes an HTTP GET call to the given url
    */
-  public get(url: string, params?: any, options: any = httpOptions): Observable<any> {
+  public get(url: string, params: any = {}, options: any = httpOptions): Observable<any> {
     const requestOptions = { ...options };
-    const httpParams = new HttpParams();
+    let httpParams = new HttpParams();
 
     if (params != null) {
-      Object.keys(params).forEach((key) => {
-        httpParams.set(key, params[key]);
-      });
+      httpParams = new HttpParams({ fromObject: params });
+      // Object.keys(params).forEach((key) => {
+      //   httpParams = httpParams.set(key, params[key]);
+      // });
     }
 
     requestOptions.params = httpParams;
+    console.log('params :>> ', params);
+    console.log('httpParams :>> ', httpParams.toString());
 
     return this.http
       .get(url, requestOptions)
@@ -70,7 +73,7 @@ export class ApiService {
    * Handles any error responses from the server.
    */
   private mapError(error: any): Observable<any> {
-    return throwError(this.mapResponse(error));
+    return throwError(() => this.mapResponse(error));
   }
 
   /**
