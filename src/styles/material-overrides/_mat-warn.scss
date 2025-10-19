@@ -5,10 +5,10 @@
 // .mat-warn {
 //   --mat-option-selected-state-label-text-color: #410002;
 //   --mat-option-selected-state-layer-color: #ffdad6;
-//   --mdc-circular-progress-active-indicator-color: #ba1a1a;
-//   --mat-full-pseudo-checkbox-selected-icon-color: #ba1a1a;
-//   --mat-full-pseudo-checkbox-selected-checkmark-color: #fffffb;
-//   --mat-minimal-pseudo-checkbox-selected-checkmark-color: #ba1a1a;
+//   --mat-progress-spinner-active-indicator-color: #ba1a1a;
+//   --mat-pseudo-checkbox-full-selected-icon-color: #ba1a1a;
+//   --mat-pseudo-checkbox-full-selected-checkmark-color: #fffffb;
+//   --mat-pseudo-checkbox-minimal-selected-checkmark-color: #ba1a1a;
 //   --mat-stepper-header-selected-state-icon-background-color: #ba1a1a;
 //   --mat-stepper-header-selected-state-icon-foreground-color: #fffffb;
 //   --mat-stepper-header-edit-state-icon-background-color: #ba1a1a;
@@ -18,73 +18,73 @@
 //   --mat-icon-color: #ba1a1a;
 // }
 // .mat-warn.mat-mdc-checkbox {
-//   --mdc-checkbox-selected-checkmark-color: #fffffb;
-//   --mdc-checkbox-selected-focus-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-hover-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-focus-state-layer-color: #ba1a1a;
-//   --mdc-checkbox-selected-hover-state-layer-color: #ba1a1a;
-//   --mdc-checkbox-unselected-pressed-state-layer-color: #ba1a1a;
+//   --mat-checkbox-selected-checkmark-color: #fffffb;
+//   --mat-checkbox-selected-focus-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-hover-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-focus-state-layer-color: #ba1a1a;
+//   --mat-checkbox-selected-hover-state-layer-color: #ba1a1a;
+//   --mat-checkbox-unselected-pressed-state-layer-color: #ba1a1a;
 //   --mat-checkbox-disabled-label-color: rgba(27, 27, 31, 0.38);
 //   --mat-checkbox-label-text-color: #1b1b1f;
 // }
 // .mat-warn.mat-mdc-slider {
-//   --mdc-slider-handle-color: #ba1a1a;
-//   --mdc-slider-focus-handle-color: #ba1a1a;
-//   --mdc-slider-hover-handle-color: #ba1a1a;
-//   --mdc-slider-active-track-color: #ba1a1a;
-//   --mdc-slider-with-tick-marks-active-container-color: #fffffb;
-//   --mdc-slider-label-container-color: #ba1a1a;
-//   --mdc-slider-label-label-text-color: #fffffb;
-//   --mdc-slider-with-overlap-handle-outline-color: #fffffb;
+//   --mat-slider-handle-color: #ba1a1a;
+//   --mat-slider-focus-handle-color: #ba1a1a;
+//   --mat-slider-hover-handle-color: #ba1a1a;
+//   --mat-slider-active-track-color: #ba1a1a;
+//   --mat-slider-with-tick-marks-active-container-color: #fffffb;
+//   --mat-slider-label-container-color: #ba1a1a;
+//   --mat-slider-label-label-text-color: #fffffb;
+//   --mat-slider-with-overlap-handle-outline-color: #fffffb;
 //   --mat-slider-ripple-color: #ba1a1a;
 //   --mat-slider-hover-state-layer-color: rgba(186, 26, 26, 0.05);
 //   --mat-slider-focus-state-layer-color: rgba(186, 26, 26, 0.2);
 // }
 // .mat-warn.mat-mdc-tab-group,
 // .mat-warn.mat-mdc-tab-nav-bar {
-//   --mdc-tab-indicator-active-indicator-color: #ba1a1a;
-//   --mat-tab-header-active-focus-indicator-color: #ba1a1a;
-//   --mat-tab-header-active-hover-indicator-color: #ba1a1a;
+//   --mat-tab-active-indicator-color: #ba1a1a;
+//   --mat-tab-active-focus-indicator-color: #ba1a1a;
+//   --mat-tab-active-hover-indicator-color: #ba1a1a;
 // }
 // .mat-warn.mat-mdc-slide-toggle {
-//   --mdc-switch-selected-focus-state-layer-color: #ba1a1a;
-//   --mdc-switch-selected-handle-color: #fffffb;
-//   --mdc-switch-selected-hover-state-layer-color: #ba1a1a;
-//   --mdc-switch-selected-pressed-state-layer-color: #ba1a1a;
-//   --mdc-switch-selected-focus-handle-color: #ffdad6;
-//   --mdc-switch-selected-hover-handle-color: #ffdad6;
-//   --mdc-switch-selected-pressed-handle-color: #ffdad6;
-//   --mdc-switch-selected-focus-track-color: #ba1a1a;
-//   --mdc-switch-selected-hover-track-color: #ba1a1a;
-//   --mdc-switch-selected-pressed-track-color: #ba1a1a;
-//   --mdc-switch-selected-track-color: #ba1a1a;
-//   --mdc-switch-selected-icon-color: #410002;
-//   --mat-switch-track-outline-color: #777680;
-//   --mat-switch-disabled-unselected-track-outline-color: #1b1b1f;
-//   --mat-switch-label-text-color: #1b1b1f;
+//   --mat-slide-toggle-selected-focus-state-layer-color: #ba1a1a;
+//   --mat-slide-toggle-selected-handle-color: #fffffb;
+//   --mat-slide-toggle-selected-hover-state-layer-color: #ba1a1a;
+//   --mat-slide-toggle-selected-pressed-state-layer-color: #ba1a1a;
+//   --mat-slide-toggle-selected-focus-handle-color: #ffdad6;
+//   --mat-slide-toggle-selected-hover-handle-color: #ffdad6;
+//   --mat-slide-toggle-selected-pressed-handle-color: #ffdad6;
+//   --mat-slide-toggle-selected-focus-track-color: #ba1a1a;
+//   --mat-slide-toggle-selected-hover-track-color: #ba1a1a;
+//   --mat-slide-toggle-selected-pressed-track-color: #ba1a1a;
+//   --mat-slide-toggle-selected-track-color: #ba1a1a;
+//   --mat-slide-toggle-selected-icon-color: #410002;
+//   --mat-slide-toggle-track-outline-color: #777680;
+//   --mat-slide-toggle-disabled-unselected-track-outline-color: #1b1b1f;
+//   --mat-slide-toggle-label-text-color: #1b1b1f;
 // }
 // .mat-warn.mat-mdc-form-field {
 //   --mat-select-focused-arrow-color: #ba1a1a;
 // }
 // .mat-warn.mat-mdc-radio-button {
-//   --mdc-radio-selected-focus-icon-color: #ba1a1a;
-//   --mdc-radio-selected-hover-icon-color: #ba1a1a;
-//   --mdc-radio-selected-icon-color: #ba1a1a;
-//   --mdc-radio-selected-pressed-icon-color: #ba1a1a;
+//   --mat-radio-selected-focus-icon-color: #ba1a1a;
+//   --mat-radio-selected-hover-icon-color: #ba1a1a;
+//   --mat-radio-selected-icon-color: #ba1a1a;
+//   --mat-radio-selected-pressed-icon-color: #ba1a1a;
 //   --mat-radio-checked-ripple-color: #ba1a1a;
 // }
 // .mat-warn.mat-mdc-progress-bar {
-//   --mdc-linear-progress-active-indicator-color: #ba1a1a;
-//   --mdc-linear-progress-track-color: #ffdad6;
+//   --mat-progress-bar-active-indicator-color: #ba1a1a;
+//   --mat-progress-bar-track-color: #ffdad6;
 // }
 // .mat-warn.mat-mdc-form-field {
-//   --mdc-filled-text-field-caret-color: #ba1a1a;
-//   --mdc-filled-text-field-focus-active-indicator-color: #ba1a1a;
-//   --mdc-filled-text-field-focus-label-text-color: #ba1a1a;
-//   --mdc-outlined-text-field-caret-color: #ba1a1a;
-//   --mdc-outlined-text-field-focus-outline-color: #ba1a1a;
-//   --mdc-outlined-text-field-focus-label-text-color: #ba1a1a;
+//   --mat-form-field-filled-caret-color: #ba1a1a;
+//   --mat-form-field-filled-focus-active-indicator-color: #ba1a1a;
+//   --mat-form-field-filled-focus-label-text-color: #ba1a1a;
+//   --mat-form-field-outlined-caret-color: #ba1a1a;
+//   --mat-form-field-outlined-focus-outline-color: #ba1a1a;
+//   --mat-form-field-outlined-focus-label-text-color: #ba1a1a;
 //   --mat-form-field-focus-select-arrow-color: #ba1a1a;
 // }
 // .mat-warn.mat-datepicker-content {
@@ -96,43 +96,43 @@
 //   --mat-datepicker-calendar-date-preview-state-outline-color: #ba1a1a;
 // }
 // .mat-warn.mat-mdc-button-base {
-//   --mdc-text-button-label-text-color: #ba1a1a;
-//   --mdc-protected-button-label-text-color: #ba1a1a;
-//   --mdc-filled-button-container-color: #ba1a1a;
-//   --mdc-filled-button-label-text-color: #fffffb;
-//   --mdc-outlined-button-label-text-color: #ba1a1a;
-//   --mat-text-button-state-layer-color: #ba1a1a;
-//   --mat-text-button-ripple-color: rgba(186, 26, 26, 0.12);
-//   --mat-protected-button-state-layer-color: #ba1a1a;
-//   --mat-protected-button-ripple-color: rgba(186, 26, 26, 0.12);
-//   --mat-filled-button-state-layer-color: #fffffb;
-//   --mat-filled-button-ripple-color: rgba(255, 255, 251, 0.12);
-//   --mat-outlined-button-state-layer-color: #ba1a1a;
-//   --mat-outlined-button-ripple-color: rgba(186, 26, 26, 0.12);
+//   --mat-button-text-label-text-color: #ba1a1a;
+//   --mat-button-protected-label-text-color: #ba1a1a;
+//   --mat-button-filled-container-color: #ba1a1a;
+//   --mat-button-filled-label-text-color: #fffffb;
+//   --mat-button-outlined-label-text-color: #ba1a1a;
+//   --mat-button-text-state-layer-color: #ba1a1a;
+//   --mat-button-text-ripple-color: rgba(186, 26, 26, 0.12);
+//   --mat-button-protected-state-layer-color: #ba1a1a;
+//   --mat-button-protected-ripple-color: rgba(186, 26, 26, 0.12);
+//   --mat-button-filled-state-layer-color: #fffffb;
+//   --mat-button-filled-ripple-color: rgba(255, 255, 251, 0.12);
+//   --mat-button-outlined-state-layer-color: #ba1a1a;
+//   --mat-button-outlined-ripple-color: rgba(186, 26, 26, 0.12);
 // }
 // .mat-warn.mat-mdc-standard-chip {
-//   --mdc-chip-elevated-selected-container-color: #ffdad6;
-//   --mdc-chip-selected-hover-state-layer-color: #410002;
-//   --mdc-chip-selected-focus-state-layer-color: #410002;
-//   --mdc-chip-selected-label-text-color: #410002;
-//   --mdc-chip-with-icon-selected-icon-color: #410002;
+//   --mat-chip-elevated-selected-container-color: #ffdad6;
+//   --mat-chip-selected-hover-state-layer-color: #410002;
+//   --mat-chip-selected-focus-state-layer-color: #410002;
+//   --mat-chip-selected-label-text-color: #410002;
+//   --mat-chip-with-icon-selected-icon-color: #410002;
 //   --mat-chip-selected-trailing-action-state-layer-color: #410002;
 //   --mat-chip-selected-trailing-icon-color: #410002;
 // }
 // .mat-warn .mdc-list-item__start,
 // .mat-warn .mdc-list-item__end {
-//   --mdc-checkbox-selected-checkmark-color: #fffffb;
-//   --mdc-checkbox-selected-focus-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-hover-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-icon-color: #ba1a1a;
-//   --mdc-checkbox-selected-focus-state-layer-color: #ba1a1a;
-//   --mdc-checkbox-selected-hover-state-layer-color: #ba1a1a;
-//   --mdc-checkbox-unselected-pressed-state-layer-color: #ba1a1a;
+//   --mat-checkbox-selected-checkmark-color: #fffffb;
+//   --mat-checkbox-selected-focus-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-hover-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-icon-color: #ba1a1a;
+//   --mat-checkbox-selected-focus-state-layer-color: #ba1a1a;
+//   --mat-checkbox-selected-hover-state-layer-color: #ba1a1a;
+//   --mat-checkbox-unselected-pressed-state-layer-color: #ba1a1a;
 //   --mat-checkbox-disabled-label-color: rgba(27, 27, 31, 0.38);
 //   --mat-checkbox-label-text-color: #1b1b1f;
-//   --mdc-radio-selected-focus-icon-color: #ba1a1a;
-//   --mdc-radio-selected-hover-icon-color: #ba1a1a;
-//   --mdc-radio-selected-icon-color: #ba1a1a;
-//   --mdc-radio-selected-pressed-icon-color: #ba1a1a;
+//   --mat-radio-selected-focus-icon-color: #ba1a1a;
+//   --mat-radio-selected-hover-icon-color: #ba1a1a;
+//   --mat-radio-selected-icon-color: #ba1a1a;
+//   --mat-radio-selected-pressed-icon-color: #ba1a1a;
 //   --mat-radio-checked-ripple-color: #ba1a1a;
 // }
